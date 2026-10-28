@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gold: #e1b258;
+  --color-gold-hover: #cfa145;
+  --color-forest: #28362b;
+  --color-wine: #33090d;
+  --color-ivory: #f5f1ed;
+  --color-cream: #e1d5c9;
+  --color-taupe: #ab948a;
+  --color-earth: #594433;
+  --color-noir: #0e0c0b;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: #f5f1ed;
+  color: #1e1c1a;
+  font-family: var(--font-bwdiagrid), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #e1b258;
+  color: #28362b;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f1ed;
+}
+::-webkit-scrollbar-thumb {
+  background: #28362b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e1b258;
+}
+
+/* Luxury Containers */
+.lux-container {
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .lux-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lux-container {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+/* Luxury Italic Flourish */
+.font-editorial-italic {
+  font-family: var(--font-editorial), serif;
+  font-style: italic;
+  font-weight: 400;
+}

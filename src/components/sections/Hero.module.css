@@ -1,0 +1,24 @@
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  background-color: #0e0c0b;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(14, 12, 11, 0.62) 0%, rgba(14, 12, 11, 0.4) 55%, rgba(14, 12, 11, 0.4) 100%);
+}
+
+.heroCard {
+  background: #28362b;
+  border: 1px solid rgba(225, 178, 88, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(14, 12, 11, 0.6);
+  border-radius: 2px;
+}

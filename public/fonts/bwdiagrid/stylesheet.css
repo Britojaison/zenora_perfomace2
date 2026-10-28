@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Bw Diagrid';
+    src: url('BwDiagrid-Regular.eot');
+    src: local('Bw Diagrid Regular'), local('BwDiagrid-Regular'),
+        url('BwDiagrid-Regular.eot?#iefix') format('embedded-opentype'),
+        url('BwDiagrid-Regular.woff2') format('woff2'),
+        url('BwDiagrid-Regular.woff') format('woff'),
+        url('BwDiagrid-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
