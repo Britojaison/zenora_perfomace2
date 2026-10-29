@@ -97,11 +97,11 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
   );
 
   return (
-    <section id="residences" ref={sectionRef} className="py-24 bg-[#faf5f0]/50">
-      <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
+    <section id="residences" ref={sectionRef} className="py-14 sm:py-20 lg:py-24 bg-[#faf5f0]/50">
+      <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-screen-xl mx-auto">
         {/* Pricing Table (Matches Reference Layout) */}
-        <div className="pricing-table-anim mb-24">
-          <div className="text-center mb-12">
+        <div className="pricing-table-anim mb-14 sm:mb-20 lg:mb-24">
+          <div className="text-center mb-8 sm:mb-12">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] text-gray-900 leading-none">
               Pricing <span className="font-display italic text-forest">Table</span>
             </h2>
@@ -109,7 +109,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
 
           <div className="max-w-4xl mx-auto bg-white shadow-sm border border-gray-200 overflow-hidden">
             {/* Table Header: High-contrast Forest Green with White Text */}
-            <div className="grid grid-cols-3 bg-forest text-white font-sans text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-center divide-x divide-white/20">
+            <div className="grid grid-cols-3 bg-forest text-white font-sans text-[10px] sm:text-sm font-semibold uppercase tracking-[0.08em] sm:tracking-[0.16em] text-center divide-x divide-white/20">
               <div className="py-4 px-2 sm:px-4">Type</div>
               <div className="py-4 px-2 sm:px-4">Land Area</div>
               <div className="py-4 px-2 sm:px-4">Built-up Area</div>
@@ -130,7 +130,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
                 >
                   <div className="py-4 px-2 sm:px-4 font-semibold text-gray-900">{row.type}</div>
                   <div className="py-4 px-2 sm:px-4 font-medium">{row.land}</div>
-                  <div className="py-4 px-2 sm:px-4 text-gray-600 font-mono text-[11px] sm:text-xs">
+                  <div className="py-4 px-2 sm:px-4 text-gray-600 font-mono text-[10px] sm:text-xs leading-snug flex items-center justify-center">
                     {row.builtUp}
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
 
         {/* Floor Plan Slider (Matches Image 5) */}
         <div>
-          <div className="floor-plan-header flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="floor-plan-header flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-6 mb-8 sm:mb-12">
             <div>
               <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-4">Project Details</p>
               <h2
@@ -158,14 +158,14 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
               <button
                 aria-label="Previous"
                 onClick={() => scroll(-1)}
-                className="w-10 h-10 rounded-full border border-forest text-forest flex items-center justify-center hover:bg-forest hover:text-ivory transition-colors"
+                className="w-11 h-11 rounded-full border border-forest text-forest flex items-center justify-center hover:bg-forest hover:text-ivory transition-colors"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 aria-label="Next"
                 onClick={() => scroll(1)}
-                className="w-10 h-10 rounded-full border border-forest text-forest flex items-center justify-center hover:bg-forest hover:text-ivory transition-colors"
+                className="w-11 h-11 rounded-full border border-forest text-forest flex items-center justify-center hover:bg-forest hover:text-ivory transition-colors"
               >
                 <ChevronRight size={18} />
               </button>
@@ -174,7 +174,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
 
           <div
             ref={trackRef}
-            className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x md:snap-none pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-2 -mx-5 px-5 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 scroll-pl-5 sm:scroll-pl-8 md:scroll-pl-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {villas.map((villa) => (
               <div
@@ -196,7 +196,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
                 >
                   View Plan
                 </button>
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 lg:p-7">
                   <span className="font-sans text-gold text-[10px] uppercase tracking-[0.25em] block mb-1.5">
                     {villa.badge}
                   </span>
@@ -210,7 +210,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
             ))}
           </div>
 
-          <p className="mt-10 font-sans text-earth text-xs uppercase tracking-[0.25em]">60 exclusive units</p>
+          <p className="mt-6 sm:mt-10 font-sans text-earth text-xs uppercase tracking-[0.25em]">60 exclusive units</p>
         </div>
       </div>
     </section>

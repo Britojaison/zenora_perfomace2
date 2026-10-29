@@ -68,8 +68,8 @@ export default function Gallery() {
   const current = galleryImages[selectedIndex];
 
   return (
-    <section id="gallery" className="py-24 bg-white text-charcoal">
-      <div className="px-6 md:px-12 max-w-screen-xl mx-auto">
+    <section id="gallery" className="py-14 sm:py-20 lg:py-24 bg-white text-charcoal">
+      <div className="px-5 sm:px-8 md:px-12 max-w-screen-xl mx-auto">
         {/* Header with counter matching Image 3 */}
         <div className="flex items-end justify-between mb-8">
           <div>
@@ -94,7 +94,7 @@ export default function Gallery() {
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
-          className="relative h-[340px] sm:h-[460px] md:h-[580px] w-full rounded-sm overflow-hidden mb-6 group shadow-md border border-cream/70"
+          className="relative h-[280px] sm:h-[420px] md:h-[520px] lg:h-[580px] w-full rounded-sm overflow-hidden mb-4 sm:mb-6 group shadow-md border border-cream/70"
         >
           <Image
             src={current.src}
@@ -110,21 +110,21 @@ export default function Gallery() {
           <button
             onClick={prev}
             aria-label="Previous gallery image"
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-forest hover:text-forest-light flex items-center justify-center shadow-md backdrop-blur-sm transition-all border border-cream/70"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 hover:bg-white text-forest hover:text-forest-light flex items-center justify-center shadow-md backdrop-blur-sm transition-all border border-cream/70"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={next}
             aria-label="Next gallery image"
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-forest hover:text-forest-light flex items-center justify-center shadow-md backdrop-blur-sm transition-all border border-cream/70"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 hover:bg-white text-forest hover:text-forest-light flex items-center justify-center shadow-md backdrop-blur-sm transition-all border border-cream/70"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
 
           {/* Caption */}
-          <div className="absolute bottom-5 left-6 right-6">
-            <p className="font-serif italic text-lg md:text-xl text-white drop-shadow-md">{current.alt}</p>
+          <div className="absolute bottom-3 sm:bottom-5 left-14 right-14 sm:left-6 sm:right-6">
+            <p className="font-serif italic text-base md:text-xl text-white drop-shadow-md text-center sm:text-left">{current.alt}</p>
           </div>
         </div>
 
@@ -157,7 +157,7 @@ export default function Gallery() {
         </div>
 
         {/* Bottom Pagination Dots */}
-        <div className="flex justify-center items-center gap-1.5 mt-4">
+        <div className="hidden sm:flex justify-center items-center gap-1.5 mt-4">
           {galleryImages.map((_, i) => (
             <button
               key={i}

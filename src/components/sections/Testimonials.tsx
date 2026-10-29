@@ -30,9 +30,9 @@ export default function Testimonials() {
   const active = testimonials[current];
 
   return (
-    <section id="testimonials" className="py-24 bg-cream/30">
-      <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
-        <div className="text-center mb-12">
+    <section id="testimonials" className="py-14 sm:py-20 lg:py-24 bg-cream/30">
+      <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-screen-xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
           <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-3">Client Stories</p>
           <h2
             className="font-display italic font-light text-forest mb-6"
@@ -73,7 +73,7 @@ export default function Testimonials() {
 
         {/* Testimonial Card */}
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white p-8 md:p-12 shadow-sm border border-cream/50 relative text-center">
+          <div className="bg-white p-6 sm:p-8 md:p-12 shadow-sm border border-cream/50 relative text-center">
             <h3 className="font-serif text-xl md:text-2xl text-forest mb-3">{active.name}</h3>
             <div className="flex justify-center gap-1 text-forest mb-6">
               {[...Array(active.rating)].map((_, i) => (
@@ -86,7 +86,7 @@ export default function Testimonials() {
           </div>
 
           {/* Slider Pagination & Arrows */}
-          <div className="flex items-center justify-between mt-8 max-w-2xl mx-auto px-4">
+          <div className="flex items-center justify-between mt-6 sm:mt-8 max-w-2xl mx-auto px-1 sm:px-4">
             <div className="flex items-center gap-2">
               {testimonials.map((_, idx) => (
                 <button
@@ -104,14 +104,14 @@ export default function Testimonials() {
               <button
                 onClick={prev}
                 aria-label="Previous review"
-                className="w-9 h-9 border border-cream hover:border-forest text-forest hover:text-forest-light flex items-center justify-center transition-colors bg-white cursor-pointer"
+                className="w-11 h-11 border border-cream hover:border-forest text-forest hover:text-forest-light flex items-center justify-center transition-colors bg-white cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={next}
                 aria-label="Next review"
-                className="w-9 h-9 border border-cream hover:border-forest text-forest hover:text-forest-light flex items-center justify-center transition-colors bg-white cursor-pointer"
+                className="w-11 h-11 border border-cream hover:border-forest text-forest hover:text-forest-light flex items-center justify-center transition-colors bg-white cursor-pointer"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>

@@ -64,9 +64,9 @@ export default function Location() {
   const IconComponent = currentData.icon;
 
   return (
-    <section id="location" className="py-24 px-6 md:px-12 max-w-screen-xl mx-auto">
+    <section id="location" className="py-14 sm:py-20 lg:py-24 px-5 sm:px-8 md:px-12 max-w-screen-xl mx-auto">
       {/* Header matching Screenshot 2 */}
-      <div className="text-center mb-14">
+      <div className="text-center mb-8 sm:mb-14">
         <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-3">Explore The Area</p>
         <h2
           className="font-display italic font-light text-forest"
@@ -77,11 +77,11 @@ export default function Location() {
       </div>
 
       {/* 4-Column Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+      <div className="grid grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4 items-stretch">
         {/* Card 1: Schools */}
         <button
           onClick={() => setActiveCategory("schools")}
-          className={`group relative h-[360px] md:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
+          className={`group relative h-[150px] sm:h-[240px] lg:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
             activeCategory === "schools" ? "ring-2 ring-forest ring-offset-2 scale-[1.02]" : "hover:opacity-95"
           }`}
         >
@@ -93,16 +93,16 @@ export default function Location() {
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/40 to-noir/10" />
-          <div className="absolute inset-0 flex flex-col justify-end p-6">
-            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-cream/70 mb-1">Education</span>
-            <h3 className="font-serif text-2xl text-white font-medium">Schools</h3>
+          <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-6">
+            <span className="font-sans text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.25em] text-cream/70 mb-1">Education</span>
+            <h3 className="font-serif text-sm sm:text-2xl text-white font-medium leading-tight">Schools</h3>
           </div>
         </button>
 
         {/* Card 2: Hospitals */}
         <button
           onClick={() => setActiveCategory("hospitals")}
-          className={`group relative h-[360px] md:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
+          className={`group relative h-[150px] sm:h-[240px] lg:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
             activeCategory === "hospitals" ? "ring-2 ring-forest ring-offset-2 scale-[1.02]" : "hover:opacity-95"
           }`}
         >
@@ -114,16 +114,16 @@ export default function Location() {
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/40 to-noir/10" />
-          <div className="absolute inset-0 flex flex-col justify-end p-6">
-            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-cream/70 mb-1">Healthcare</span>
-            <h3 className="font-serif text-2xl text-white font-medium">Hospitals</h3>
+          <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-6">
+            <span className="font-sans text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.25em] text-cream/70 mb-1">Healthcare</span>
+            <h3 className="font-serif text-sm sm:text-2xl text-white font-medium leading-tight">Hospitals</h3>
           </div>
         </button>
 
         {/* Card 3: Connectivity */}
         <button
           onClick={() => setActiveCategory("connectivity")}
-          className={`group relative h-[360px] md:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
+          className={`group relative h-[150px] sm:h-[240px] lg:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
             activeCategory === "connectivity" ? "ring-2 ring-forest ring-offset-2 scale-[1.02]" : "hover:opacity-95"
           }`}
         >
@@ -135,14 +135,14 @@ export default function Location() {
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/40 to-noir/10" />
-          <div className="absolute inset-0 flex flex-col justify-end p-6">
-            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-cream/70 mb-1">Transit</span>
-            <h3 className="font-serif text-2xl text-white font-medium">Connectivity</h3>
+          <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-6">
+            <span className="font-sans text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.25em] text-cream/70 mb-1">Transit</span>
+            <h3 className="font-serif text-sm sm:text-2xl text-white font-medium leading-tight">Connectivity</h3>
           </div>
         </button>
 
         {/* Card 4: Details Panel (Matches Image 2 Right Column) */}
-        <div className="bg-white p-7 rounded-sm shadow-sm border border-cream/50 flex flex-col justify-between h-[360px] md:h-[420px]">
+        <div className="col-span-3 lg:col-span-1 bg-white p-6 sm:p-7 rounded-sm shadow-sm border border-cream/50 flex flex-col justify-between gap-5 lg:h-[420px]">
           <div>
             <div className="flex items-center gap-3 text-forest mb-2">
               <IconComponent className="w-6 h-6 stroke-[1.5]" />
@@ -155,8 +155,8 @@ export default function Location() {
 
             <div className="divide-y divide-cream/60">
               {currentData.items.slice(0, 5).map((item) => (
-                <div key={item.name} className="py-2.5 flex items-center justify-between text-xs">
-                  <span className="font-sans text-earth truncate max-w-[170px]">{item.name}</span>
+                <div key={item.name} className="py-2.5 flex items-center justify-between gap-3 text-xs">
+                  <span className="font-sans text-earth min-w-0 flex-1 lg:truncate lg:max-w-[170px]">{item.name}</span>
                   <span className="font-sans text-forest font-semibold shrink-0 ml-2">{item.distance}</span>
                 </div>
               ))}
@@ -167,7 +167,7 @@ export default function Location() {
             href="https://maps.google.com/?q=Goldwins+Coimbatore"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.2em] text-forest hover:text-forest-light transition-colors pt-3 border-t border-cream/40"
+            className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.2em] text-forest hover:text-forest-light transition-colors pt-3 min-h-[44px] border-t border-cream/40"
           >
             <Navigation className="w-3 h-3" />
             View On Google Maps

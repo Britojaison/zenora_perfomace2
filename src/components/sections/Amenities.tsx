@@ -113,10 +113,10 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
   };
 
   return (
-    <section id="amenities" className="py-24 bg-white">
-      <div className="px-6 md:px-12 max-w-screen-xl mx-auto">
+    <section id="amenities" className="py-14 sm:py-20 lg:py-24 bg-white">
+      <div className="px-5 sm:px-8 md:px-12 max-w-screen-xl mx-auto">
         {/* Header matching site style */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-3">
             Lifestyle & Leisure
           </p>
@@ -133,13 +133,13 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
         </div>
 
         {/* 6 Rounded Icon Cards (Uniform static cards) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-3.5 mb-10 sm:mb-12">
           {keyAmenities.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.id}
-                className="flex flex-col items-center justify-center p-6 rounded-xl border border-cream/70 bg-cream/15 text-forest text-center min-h-[140px] select-none shadow-sm"
+                className="flex flex-col items-center justify-center p-4 sm:p-6 rounded-xl border border-cream/70 bg-cream/15 text-forest text-center min-h-[112px] sm:min-h-[140px] select-none shadow-sm"
               >
                 <Icon className="w-7 h-7 mb-3 text-forest" />
                 <span className="font-sans text-xs tracking-wider font-medium leading-tight">{item.label}</span>
@@ -153,7 +153,7 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
           <button
             type="button"
             onClick={handleToggle}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-[48px] bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-pointer"
           >
             <Eye className="w-4 h-4" />
             {showAll ? "Hide Features" : "View All Features"}
@@ -165,7 +165,7 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
         {showAll && (
           <div
             id="all-amenities-grid"
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 border-t border-cream/60 transition-all duration-500 animate-fadeIn"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 pt-10 border-t border-cream/60 transition-all duration-500 animate-fadeIn"
           >
             {allAmenities.map((item) => (
               <div key={item.title} className="group relative overflow-hidden bg-ivory shadow-sm border border-cream/50">

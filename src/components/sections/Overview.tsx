@@ -26,7 +26,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
           start: "top 80%",
           toggleActions: "play none none none",
         },
-        defaults: { ease: "power3.out" },
+        defaults: { ease: "power3.out", clearProps: "opacity,transform,visibility" },
       });
 
       tl.from(".overview-img-back", { opacity: 0, x: -35, scale: 0.95, duration: 1 })
@@ -41,10 +41,11 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
   );
 
   return (
-    <section id="overview" ref={sectionRef} className="py-24 px-6 md:px-20 max-w-screen-xl mx-auto">
-      <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="overview" ref={sectionRef} className="py-14 sm:py-20 lg:py-24 px-5 sm:px-8 md:px-12 lg:px-20 max-w-screen-xl mx-auto">
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
         {/* Left: Overlapping Architectural Imagery */}
-        <div className="lg:col-span-5 relative h-[440px] sm:h-[500px] md:h-[540px] max-w-[480px] mx-auto w-full">
+        <div className="lg:col-span-5 relative h-[340px] sm:h-[460px] md:h-[540px] max-w-[480px] mx-auto w-full">
           {/* Top-Left Night/Evening Image */}
           <div className="overview-img-back absolute top-0 left-0 w-[68%] h-[64%] overflow-hidden shadow-lg z-10 border border-white">
             <SiteImage
@@ -84,13 +85,13 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
             A way of being.
           </h2>
 
-          <p className="overview-text-reveal font-sans text-earth text-base leading-[1.9] mb-4">
+          <p className="overview-text-reveal font-sans text-earth text-[15px] sm:text-base leading-[1.8] sm:leading-[1.9] mb-4">
             Zenora is for those who want more from life: more comfort, more intention, and more elegance in everyday
             living. Designed as an ultra luxury community in the quiet corner of Goldwins, Zenora combines premium
             architecture with curated lifestyle spaces.
           </p>
 
-          <p className="overview-text-reveal font-sans text-earth text-base leading-[1.9] mb-8">
+          <p className="overview-text-reveal font-sans text-earth text-[15px] sm:text-base leading-[1.8] sm:leading-[1.9] mb-8">
             The Horizon Garden, Serenity Pool, and Business Lounge, offering an elevated living experience with all the
             modern comforts.
           </p>
@@ -127,7 +128,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
 
           {/* RERA Details with Scannable QR Code */}
           <div className="overview-qr-box flex items-center gap-4 mb-9 pt-1">
-            <div className="w-13 h-13 border border-gray-200 p-1 bg-white shrink-0 shadow-xs">
+            <div className="w-14 h-14 border border-gray-200 p-1 bg-white shrink-0 shadow-xs">
               <Image
                 src="/images/rera_qr.svg"
                 alt="TNRERA QR Code"
@@ -157,7 +158,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
             <button
               type="button"
               onClick={onOpenBrochure}
-              className="overview-btn inline-flex items-center justify-center gap-2.5 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.18em] px-7 py-4 font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] cursor-pointer"
+              className="overview-btn inline-flex items-center justify-center gap-2.5 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.15em] sm:tracking-[0.18em] px-6 sm:px-7 py-4 min-h-[48px] font-medium transition-[background-color,box-shadow] duration-300 shadow-sm hover:shadow-md cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>Download Brochure</span>
@@ -166,7 +167,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
             <button
               type="button"
               onClick={onOpenPaymentSchedule}
-              className="overview-btn inline-flex items-center justify-center gap-2.5 bg-[#5b6065] hover:bg-[#484c50] text-white font-sans text-xs uppercase tracking-[0.18em] px-7 py-4 font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] cursor-pointer"
+              className="overview-btn inline-flex items-center justify-center gap-2.5 bg-[#5b6065] hover:bg-[#484c50] text-white font-sans text-xs uppercase tracking-[0.15em] sm:tracking-[0.18em] px-6 sm:px-7 py-4 min-h-[48px] font-medium transition-[background-color,box-shadow] duration-300 shadow-sm hover:shadow-md cursor-pointer"
             >
               <FileText className="w-4 h-4" />
               <span>Download Payment Schedule</span>

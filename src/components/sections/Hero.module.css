@@ -1,11 +1,12 @@
 .heroSection {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 6.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
   overflow: hidden;
   background-color: #0e0c0b;
 }

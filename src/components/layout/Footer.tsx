@@ -19,9 +19,9 @@ export default function Footer() {
 
       {/* Main Light Luxury Footer */}
       <div className="bg-[#faf6f0] text-forest border-t border-cream/60">
-        <div className="max-w-screen-xl mx-auto px-6 md:px-20 pt-16 pb-10">
-          <div className="grid md:grid-cols-3 gap-12 mb-14">
-            <div>
+        <div className="max-w-screen-xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 pt-12 sm:pt-16 pb-32 md:pb-10">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 lg:gap-12 mb-10 sm:mb-14">
+            <div className="col-span-2 lg:col-span-1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/zenora_logo_dark.svg" alt="Zenora" className="h-10 w-auto mb-5" />
               <p className="font-sans text-earth text-sm leading-relaxed max-w-xs">
@@ -89,7 +89,7 @@ export default function Footer() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="font-sans text-earth hover:text-forest text-xs transition-colors"
+                  className="font-sans text-earth hover:text-forest text-xs transition-colors py-1"
                 >
                   {link.name}
                 </Link>
@@ -123,9 +123,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-cream/70 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="border-t border-cream/70 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
             <p className="font-sans text-taupe text-[11px]">© {new Date().getFullYear()} ZenVistas. All rights reserved.</p>
-            <div className="flex gap-6 flex-wrap justify-center">
+            <div className="flex gap-x-6 gap-y-2 flex-wrap justify-center">
               <Link
                 href="/terms-and-conditions"
                 className="font-sans text-taupe text-[11px] hover:text-forest transition-colors"

@@ -44,10 +44,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 px-6 md:px-12 max-w-screen-xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="contact" ref={sectionRef} className="py-14 sm:py-20 lg:py-24 px-5 sm:px-8 md:px-12 max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         {/* Left: Overlapping Photos matching Screenshot 5 */}
-        <div className="lg:col-span-6 relative h-[440px] sm:h-[500px] w-full max-w-[500px] mx-auto">
+        <div className="lg:col-span-6 relative h-[320px] sm:h-[460px] w-full max-w-[500px] mx-auto">
           {/* Back/Top Image */}
           <div className="contact-img-back absolute top-0 left-0 w-[68%] h-[68%] rounded-sm overflow-hidden shadow-md">
             <Image
@@ -87,7 +87,7 @@ export default function Contact() {
           </div>
 
           {/* Form Container Card */}
-          <div className="contact-form-box bg-cream/20 p-8 sm:p-10 rounded-sm border border-cream/70 shadow-sm">
+          <div className="contact-form-box bg-cream/20 p-6 sm:p-10 rounded-sm border border-cream/70 shadow-sm">
             {submitted ? (
               <div className="py-12 text-center">
                 <p className="font-display italic font-light text-2xl text-forest mb-2">Thank you.</p>
@@ -107,7 +107,7 @@ export default function Contact() {
                     placeholder="Your Name"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full bg-white border border-cream px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-forest transition-colors font-sans rounded-none"
+                    className="w-full bg-white border border-cream px-4 py-3.5 text-base sm:text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-forest transition-colors font-sans rounded-none"
                   />
                 </div>
 
@@ -125,7 +125,7 @@ export default function Contact() {
                       placeholder="XXXXX XXXXX"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full bg-transparent px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none font-sans"
+                      className="w-full bg-transparent min-w-0 px-4 py-3.5 text-base sm:text-sm text-forest placeholder:text-taupe focus:outline-none font-sans"
                     />
                   </div>
                 </div>
@@ -140,13 +140,13 @@ export default function Contact() {
                     placeholder="email@example.com"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full bg-white border border-cream px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-forest transition-colors font-sans rounded-none"
+                    className="w-full bg-white border border-cream px-4 py-3.5 text-base sm:text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-forest transition-colors font-sans rounded-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.25em] flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+                  className="w-full py-4 min-h-[52px] bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   Book A Site Visit
@@ -160,7 +160,7 @@ export default function Contact() {
           </div>
 
           {/* Quick contact strip */}
-          <div className="contact-strip-anim flex flex-wrap items-center gap-6 mt-6 text-xs text-earth font-sans">
+          <div className="contact-strip-anim flex flex-wrap items-center gap-x-6 gap-y-3.5 mt-6 text-xs text-earth font-sans break-words">
             <span className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-forest" /> Goldwins, Coimbatore
             </span>

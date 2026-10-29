@@ -54,8 +54,8 @@ export default function Hero(props: HeroProps) {
       </div>
 
       {/* Main Container - Centered horizontally across viewport */}
-      <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10 w-full flex items-center justify-center">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 xl:gap-24 w-full">
+      <div className="max-w-screen-2xl mx-auto px-5 sm:px-8 md:px-12 relative z-10 w-full flex items-center justify-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-14 sm:gap-16 lg:gap-16 xl:gap-24 w-full">
           {/* Left: Framed Visual Showcase with Vertical Title */}
           <div ref={visualRef} className="relative flex items-center justify-center shrink-0">
             {/* Assembly grouping vertical title + tall photo in flow */}
@@ -69,9 +69,9 @@ export default function Hero(props: HeroProps) {
               </div>
 
               {/* Tall Framed Image Container */}
-              <div className="hero-image-box relative w-[300px] sm:w-[350px] md:w-[390px] lg:w-[420px] h-[480px] sm:h-[530px] md:h-[580px] lg:h-[620px]">
+              <div className="hero-image-box relative w-[min(78vw,320px)] sm:w-[350px] md:w-[390px] lg:w-[420px] h-[min(112vw,440px)] sm:h-[530px] md:h-[580px] lg:h-[620px] mr-3 sm:mr-0">
                 {/* Offset Accent Outline Box (Extending top & right) */}
-                <div className="absolute -top-5 -right-5 w-full h-full border-2 border-[#e1b258]/60 pointer-events-none z-0" />
+                <div className="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-full h-full border-2 border-[#e1b258]/60 pointer-events-none z-0" />
 
                 {/* Main Photo */}
                 <div className="relative w-full h-full rounded-none overflow-hidden shadow-2xl z-10 border border-white">
@@ -118,9 +118,9 @@ export default function Hero(props: HeroProps) {
           <div className="flex justify-center shrink-0 w-full sm:w-auto">
             <div
               ref={formCardRef}
-              className="w-full max-w-[420px] sm:w-[420px] bg-[#faf7f2] rounded-md shadow-[0_25px_60px_-15px_rgba(0,0,0,0.45)] p-8 sm:p-10 border border-[#e5dccf] relative z-10"
+              className="w-full max-w-[420px] sm:w-[420px] bg-[#faf7f2] rounded-md shadow-[0_25px_60px_-15px_rgba(0,0,0,0.45)] p-6 sm:p-10 border border-[#e5dccf] relative z-10"
             >
-              <h2 className="font-serif italic font-normal text-3xl sm:text-[36px] text-[#1c261e] text-center mb-8">
+              <h2 className="font-serif italic font-normal text-3xl sm:text-[36px] text-[#1c261e] text-center mb-6 sm:mb-8">
                 Enquiry Now
               </h2>
 
@@ -132,7 +132,7 @@ export default function Hero(props: HeroProps) {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                   <div>
                     <label className="text-[10px] uppercase tracking-[0.18em] text-[#594433] font-sans font-medium block mb-2">
                       Full Name *
@@ -143,7 +143,7 @@ export default function Hero(props: HeroProps) {
                       placeholder="Your Name"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-white border border-[#ded5c8] px-4 py-3.5 text-sm text-[#1c261e] placeholder:text-[#a89f91] focus:outline-none focus:border-[#e1b258] font-sans rounded-none transition-colors"
+                      className="w-full bg-white border border-[#ded5c8] px-4 py-3.5 text-base sm:text-sm text-[#1c261e] placeholder:text-[#a89f91] focus:outline-none focus:border-[#e1b258] font-sans rounded-none transition-colors"
                     />
                   </div>
 
@@ -163,7 +163,7 @@ export default function Hero(props: HeroProps) {
                         placeholder="XXXXXXXXXX"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full bg-transparent px-4 py-3.5 text-sm text-[#1c261e] placeholder:text-[#a89f91] focus:outline-none font-sans"
+                        className="w-full bg-transparent px-4 py-3.5 text-base sm:text-sm text-[#1c261e] min-w-0 placeholder:text-[#a89f91] focus:outline-none font-sans"
                       />
                     </div>
                   </div>
@@ -178,7 +178,7 @@ export default function Hero(props: HeroProps) {
                       placeholder="email@example.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-white border border-[#ded5c8] px-4 py-3.5 text-sm text-[#1c261e] placeholder:text-[#a89f91] focus:outline-none focus:border-[#e1b258] font-sans rounded-none transition-colors"
+                      className="w-full bg-white border border-[#ded5c8] px-4 py-3.5 text-base sm:text-sm text-[#1c261e] placeholder:text-[#a89f91] focus:outline-none focus:border-[#e1b258] font-sans rounded-none transition-colors"
                     />
                   </div>
 
