@@ -44,8 +44,8 @@ export default function Hero({ onOpenBrochure }: HeroProps) {
     <section id="home" ref={containerRef} className={styles.heroSection}>
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/coffee_with_Zenora.jpg"
-          alt="Zenora luxury villa community in Goldwins, Coimbatore"
+          src="/images/street-view.jpg"
+          alt="Zenora luxury villa community street view in Goldwins, Coimbatore"
           fill
           priority
           sizes="100vw"
