@@ -1,9 +1,29 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SiteImage from "@/components/ui/SiteImage";
+import {
+  Sparkles,
+  Film,
+  Flower2,
+  Waves,
+  Building2,
+  Dumbbell,
+  Eye,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 
-const amenities = [
+const keyAmenities = [
+  { id: "kids", label: "Kids Play Area", icon: Sparkles },
+  { id: "theatre", label: "Open Air Theatre", icon: Film },
+  { id: "yoga", label: "Yoga / Meditation Garden", icon: Flower2, featured: true },
+  { id: "pool", label: "Swimming Pool", icon: Waves },
+  { id: "coworking", label: "Co-working Space", icon: Building2 },
+  { id: "gym", label: "Fitness Gym", icon: Dumbbell },
+];
+
+const allAmenities = [
   {
     title: "Meditation Centre",
     image: "meditation-centre.jpg",
@@ -67,35 +87,78 @@ const amenities = [
 ];
 
 export default function Amenities() {
+  const [selectedKey, setSelectedKey] = useState("yoga");
+  const [showAll, setShowAll] = useState(false);
+
   return (
-    <section id="amenities" className="py-32 bg-white">
-      <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
-        <div className="mb-20">
-          <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-4">Lifestyle</p>
+    <section id="amenities" className="py-24 bg-white">
+      <div className="px-6 md:px-12 max-w-screen-xl mx-auto">
+        {/* Header matching Screenshot 1 */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
           <h2
-            className="font-display italic font-light text-forest max-w-lg"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+            className="font-serif tracking-widest text-forest uppercase font-normal mb-4"
+            style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}
           >
-            Spaces that shape how you live.
+            Amenities
           </h2>
+          <p className="font-sans text-earth text-sm md:text-base leading-relaxed">
+            Discover a world of thoughtfully curated amenities designed to bring comfort, convenience, and luxury to
+            your modern lifestyle.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-taupe/10">
-          {amenities.map((item) => (
-            <div key={item.title} className="group relative overflow-hidden bg-ivory">
-              <SiteImage
-                src={item.image}
-                alt={`${item.title} at Zenora luxury villa community`}
-                aspectRatio="aspect-[4/3]"
-              />
-              <div className="p-8">
-                <h3 className="font-display text-xl text-forest mb-3">{item.title}</h3>
-                <p className="font-sans text-earth text-sm leading-relaxed">{item.desc}</p>
-              </div>
-              <div className="absolute bottom-0 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-500" />
-            </div>
-          ))}
+        {/* 6 Rounded Icon Cards matching Screenshot 1 */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 mb-12">
+          {keyAmenities.map((item) => {
+            const Icon = item.icon;
+            const isSelected = selectedKey === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => setSelectedKey(item.id)}
+                className={`flex flex-col items-center justify-center p-6 rounded-xl border text-center transition-all duration-300 min-h-[140px] ${
+                  isSelected
+                    ? "bg-wine text-white border-wine shadow-lg scale-105"
+                    : "bg-cream/15 text-forest border-cream/70 hover:bg-cream/30 hover:border-wine/40"
+                }`}
+              >
+                <Icon className={`w-7 h-7 mb-3 ${isSelected ? "text-white" : "text-wine"}`} />
+                <span className="font-sans text-xs tracking-wider font-medium leading-tight">{item.label}</span>
+              </button>
+            );
+          })}
         </div>
+
+        {/* Action Button matching Screenshot 1 */}
+        <div className="text-center mb-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-sm"
+          >
+            <Eye className="w-4 h-4" />
+            {showAll ? "Hide Features" : "View All Features"}
+            {showAll ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          </button>
+        </div>
+
+        {/* Expandable Full Photo Amenities Grid */}
+        {showAll && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 border-t border-cream/60 transition-all duration-500 animate-fadeIn">
+            {allAmenities.map((item) => (
+              <div key={item.title} className="group relative overflow-hidden bg-ivory shadow-sm border border-cream/50">
+                <SiteImage
+                  src={item.image}
+                  alt={`${item.title} at Zenora luxury villa community`}
+                  aspectRatio="aspect-[4/3]"
+                />
+                <div className="p-6">
+                  <h3 className="font-display text-lg text-forest mb-2">{item.title}</h3>
+                  <p className="font-sans text-earth text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
+import { Calendar, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -11,99 +13,133 @@ export default function Contact() {
     setSubmitted(true);
   };
 
-  const inputClass =
-    "w-full bg-transparent border-b border-cream/25 pb-3 text-sm text-cream placeholder:text-cream/30 focus:outline-none focus:border-gold transition-colors font-sans";
-  const labelClass = "text-[9px] uppercase tracking-[0.25em] text-cream/60 block mb-2 font-sans";
-
   return (
-    <section id="contact" className="py-32 bg-wine">
-      <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-4">Get in Touch</p>
-            <h2
-              className="font-display italic font-light text-cream mb-8"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-            >
-              Begin your
-              <br />
-              Zenora journey.
-            </h2>
-            <p className="font-sans text-cream/70 text-base leading-[1.9] max-w-md mb-12">
-              Our team is ready to walk you through every detail — from floor plans to financing. Reach out and let us
-              show you what elevation truly feels like.
-            </p>
-            <div className="space-y-4 font-sans text-xs uppercase tracking-[0.15em]">
-              <p className="text-cream/70">Goldwins, Coimbatore, Tamil Nadu</p>
-              <p>
-                <a href="tel:+918870044213" className="text-gold hover:underline">
-                  +91 88700 44213
-                </a>
-              </p>
-              <p>
-                <a href="mailto:info@zenvistas.co.in" className="text-gold hover:underline normal-case tracking-normal text-sm">
-                  info@zenvistas.co.in
-                </a>
-              </p>
-            </div>
+    <section id="contact" className="py-24 px-6 md:px-12 max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Left: Overlapping Photos matching Screenshot 5 */}
+        <div className="lg:col-span-6 relative h-[440px] sm:h-[500px] w-full max-w-[500px] mx-auto">
+          {/* Back/Top Image */}
+          <div className="absolute top-0 left-0 w-[68%] h-[68%] rounded-sm overflow-hidden shadow-md">
+            <Image
+              src="/images/aerial-view-club-hosue.jpg"
+              alt="Zenora luxury villa community Goldwins"
+              fill
+              sizes="(max-width: 768px) 60vw, 30vw"
+              className="object-cover"
+            />
           </div>
 
-          <div>
+          {/* Accent Frame Box */}
+          <div className="absolute top-[8%] left-[28%] w-[66%] h-[68%] border border-wine/40 pointer-events-none" />
+
+          {/* Front/Bottom Image */}
+          <div className="absolute bottom-0 right-0 w-[70%] h-[68%] rounded-sm overflow-hidden shadow-2xl">
+            <Image
+              src="/images/street-view.jpg"
+              alt="Zenora architectural street view"
+              fill
+              sizes="(max-width: 768px) 70vw, 35vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Right: Contact Form matching Screenshot 5 */}
+        <div className="lg:col-span-6">
+          <div className="mb-6">
+            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-2">Get In Touch</p>
+            <h2
+              className="font-display italic font-light text-forest leading-[1.1]"
+              style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)" }}
+            >
+              Start Your <span className="text-wine">Property Journey</span>
+            </h2>
+          </div>
+
+          {/* Form Container Card */}
+          <div className="bg-cream/20 p-8 sm:p-10 rounded-sm border border-cream/70 shadow-sm">
             {submitted ? (
-              <p className="font-display italic font-light text-3xl text-cream py-10">Thank you.</p>
+              <div className="py-12 text-center">
+                <p className="font-display italic font-light text-2xl text-forest mb-2">Thank you.</p>
+                <p className="font-sans text-earth text-sm">
+                  Our villa consultant will reach out to schedule your personalized visit.
+                </p>
+              </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8 max-w-xl">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className={labelClass}>Full Name</label>
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-earth font-sans font-medium block mb-2">
+                    Full Name *
+                  </label>
                   <input
                     type="text"
                     required
-                    placeholder="Your name"
+                    placeholder="Your Name"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className={inputClass}
+                    className="w-full bg-white border border-cream px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-wine transition-colors font-sans rounded-none"
                   />
                 </div>
+
                 <div>
-                  <label className={labelClass}>Phone</label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="+91 XXXXX XXXXX"
-                    value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    className={inputClass}
-                  />
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-earth font-sans font-medium block mb-2">
+                    Phone Number *
+                  </label>
+                  <div className="flex border border-cream bg-white">
+                    <span className="inline-flex items-center gap-1.5 px-3 border-r border-cream text-xs text-earth font-sans bg-cream/10">
+                      <span>🇮🇳</span> +91
+                    </span>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="XXXXX XXXXX"
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      className="w-full bg-transparent px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none font-sans"
+                    />
+                  </div>
                 </div>
+
                 <div>
-                  <label className={labelClass}>Email</label>
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-earth font-sans font-medium block mb-2">
+                    Email Address *
+                  </label>
                   <input
                     type="email"
                     required
-                    placeholder="your@email.com"
+                    placeholder="email@example.com"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className={inputClass}
+                    className="w-full bg-white border border-cream px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-wine transition-colors font-sans rounded-none"
                   />
                 </div>
-                <div>
-                  <label className={labelClass}>Message (optional)</label>
-                  <textarea
-                    rows={3}
-                    placeholder="Tell us what you're looking for..."
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className={`${inputClass} resize-none`}
-                  />
-                </div>
+
                 <button
                   type="submit"
-                  className="w-full py-4 border border-gold/70 hover:bg-gold text-cream hover:text-wine font-sans text-[10px] uppercase tracking-[0.25em] transition-all duration-300"
+                  className="w-full py-4 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.25em] flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
                 >
-                  Send Enquiry
+                  <Calendar className="w-4 h-4" />
+                  Book A Site Visit
                 </button>
+
+                <p className="text-[10px] text-center text-taupe font-sans leading-relaxed pt-2">
+                  Your information is secure. We will only contact you regarding your inquiry.
+                </p>
               </form>
             )}
+          </div>
+
+          {/* Quick contact strip */}
+          <div className="flex flex-wrap items-center gap-6 mt-6 text-xs text-earth font-sans">
+            <span className="flex items-center gap-2">
+              <MapPin className="w-3.5 h-3.5 text-wine" /> Goldwins, Coimbatore
+            </span>
+            <a href="tel:+918870044213" className="flex items-center gap-2 hover:text-wine transition-colors">
+              <Phone className="w-3.5 h-3.5 text-wine" /> +91 88700 44213
+            </a>
+            <a href="mailto:info@zenvistas.co.in" className="flex items-center gap-2 hover:text-wine transition-colors">
+              <Mail className="w-3.5 h-3.5 text-wine" /> info@zenvistas.co.in
+            </a>
           </div>
         </div>
       </div>

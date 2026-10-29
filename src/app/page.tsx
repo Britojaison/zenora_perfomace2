@@ -12,6 +12,7 @@ import Amenities from "@/components/sections/Amenities";
 import Highlights from "@/components/sections/Highlights";
 import Gallery from "@/components/sections/Gallery";
 import Location from "@/components/sections/Location";
+import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import EnquiryModal from "@/components/ui/EnquiryModal";
 import StickyContactBar from "@/components/ui/StickyContactBar";
@@ -32,6 +33,8 @@ export default function Home() {
         quote="A home that reflects who you have become, and what you are building next."
       />
       <Amenities />
+      <Location />
+      <MapSection />
       <QuoteBanner
         image="private-theatre.jpg"
         alt="Zenora luxury villa lifestyle and community amenities in Coimbatore"
@@ -39,8 +42,7 @@ export default function Home() {
         attribution="Zenora"
       />
       <Gallery />
-      <Location />
-      <MapSection />
+      <Testimonials />
       <Contact />
       <Footer />
 

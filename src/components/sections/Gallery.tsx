@@ -1,110 +1,147 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import SiteImage from "@/components/ui/SiteImage";
 
-const tabs = ["Indoor", "Outdoor", "Clubhouse"] as const;
-type Tab = (typeof tabs)[number];
-
-const images: Record<Tab, string[]> = {
-  Indoor: [
-    "bedroom01.jpg",
-    "bathroom.jpg",
-    "Kitchen.jpg",
-    "Living.jpg",
-    "Dinning1.jpg",
-    "master-bedroom-view-1.jpg",
-    "View-10.jpg",
-    "View-11.jpg",
-    "View-42.jpg",
-  ],
-  Outdoor: ["street-view.jpg", "7-cent-side.jpg", "aerial-view-club-hosue.jpg"],
-  Clubhouse: ["clubhouse.jpg", "swimming-pool.jpg", "private-theatre.jpg", "View-48.jpg"],
-};
-
-const descriptions: Partial<Record<Tab, { title: string; text: string }>> = {
-  Indoor: {
-    title: "Indoor Spaces",
-    text: "Interiors defined by proportion and light. Spaces that feel calm, considered and quietly refined.",
-  },
-};
+const galleryImages = [
+  { src: "/images/Dinning1.jpg", alt: "Zenora Dining & Living Experience" },
+  { src: "/images/Living.jpg", alt: "Spacious Living Room" },
+  { src: "/images/Kitchen.jpg", alt: "Modern Kitchen Architecture" },
+  { src: "/images/master-bedroom-view-1.jpg", alt: "Master Bedroom Suite" },
+  { src: "/images/bedroom01.jpg", alt: "Luxury Bedroom Design" },
+  { src: "/images/bathroom.jpg", alt: "Curated Bathroom Finishes" },
+  { src: "/images/street-view.jpg", alt: "Scenic Villa Street View" },
+  { src: "/images/7-cent-side.jpg", alt: "7 Cent Signature Villa" },
+  { src: "/images/aerial-view-club-hosue.jpg", alt: "Aerial Clubhouse View" },
+  { src: "/images/swimming-pool.jpg", alt: "Serenity Swimming Pool" },
+  { src: "/images/private-theatre.jpg", alt: "Exclusive Private Cinema" },
+  { src: "/images/garden-cafe.jpg", alt: "Lush Garden Cafe" },
+  { src: "/images/business-lounge.jpg", alt: "Executive Business Lounge" },
+  { src: "/images/meditation-centre.jpg", alt: "Tranquil Meditation Centre" },
+  { src: "/images/childrens-play-garden.jpg", alt: "Children's Play Garden" },
+  { src: "/images/cricket.jpg", alt: "Cricket Turf" },
+  { src: "/images/multi-sport-court.jpg", alt: "Multi Sport Arena" },
+  { src: "/images/walking-paths.jpg", alt: "Landscaped Walking Paths" },
+  { src: "/images/View-48.jpg", alt: "Panoramic Community View" },
+];
 
 export default function Gallery() {
-  const [active, setActive] = useState<Tab>("Indoor");
-  const rowRef = useRef<HTMLDivElement>(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const thumbnailsRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (dir: number) => {
-    rowRef.current?.scrollBy({ left: dir * 480, behavior: "smooth" });
+  const prev = () => {
+    const nextIdx = selectedIndex === 0 ? galleryImages.length - 1 : selectedIndex - 1;
+    setSelectedIndex(nextIdx);
+    scrollToThumb(nextIdx);
   };
 
-  const desc = descriptions[active];
+  const next = () => {
+    const nextIdx = selectedIndex === galleryImages.length - 1 ? 0 : selectedIndex + 1;
+    setSelectedIndex(nextIdx);
+    scrollToThumb(nextIdx);
+  };
+
+  const scrollToThumb = (idx: number) => {
+    const el = thumbnailsRef.current;
+    if (!el) return;
+    const thumbWidth = 90;
+    el.scrollTo({ left: idx * thumbWidth - el.clientWidth / 2 + thumbWidth / 2, behavior: "smooth" });
+  };
+
+  const current = galleryImages[selectedIndex];
 
   return (
-    <section id="gallery" className="pt-32 pb-16 px-6 md:px-20 max-w-screen-xl mx-auto">
-      <div className="mb-16">
-        <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-4">Gallery</p>
-        <h2
-          className="font-display italic font-light text-forest"
-          style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-        >
-          See it to believe it.
-        </h2>
-      </div>
+    <section id="gallery" className="py-24 bg-[#141211] text-white">
+      <div className="px-6 md:px-12 max-w-screen-xl mx-auto">
+        {/* Header with counter matching Image 3 */}
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <h2
+              className="font-display italic font-light text-white"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+            >
+              Project <span className="text-red-500 font-serif not-italic">Gallery</span>
+            </h2>
+          </div>
+          <div className="flex items-center gap-2 font-display text-lg text-cream/70">
+            <span className="text-2xl font-serif text-white">{selectedIndex + 1}</span>
+            <span className="text-red-500 font-sans text-xs">—</span>
+            <span className="text-sm font-sans text-cream/40">{galleryImages.length}</span>
+          </div>
+        </div>
 
-      <div className="mb-12">
-        <div className="inline-flex w-full md:w-auto border-b border-taupe/20 mb-8">
-          {tabs.map((tab) => (
+        {/* Featured Main Image */}
+        <div className="relative h-[340px] sm:h-[460px] md:h-[580px] w-full rounded-sm overflow-hidden mb-6 group">
+          <Image
+            src={current.src}
+            alt={current.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover transition-all duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-noir/70 via-transparent to-noir/20 pointer-events-none" />
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prev}
+            aria-label="Previous gallery image"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-sm bg-noir/50 hover:bg-noir/80 text-white flex items-center justify-center backdrop-blur-sm transition-all"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next gallery image"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-sm bg-noir/50 hover:bg-noir/80 text-white flex items-center justify-center backdrop-blur-sm transition-all"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Caption */}
+          <div className="absolute bottom-5 left-6 right-6">
+            <p className="font-serif italic text-lg md:text-xl text-white">{current.alt}</p>
+          </div>
+        </div>
+
+        {/* Thumbnails Filmstrip matching Image 3 */}
+        <div
+          ref={thumbnailsRef}
+          className="flex gap-2.5 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {galleryImages.map((img, i) => (
             <button
-              key={tab}
-              onClick={() => setActive(tab)}
-              className={`relative font-sans text-[10px] md:text-xs uppercase tracking-wider px-4 md:px-6 py-3 transition-colors duration-300 whitespace-nowrap ${
-                active === tab ? "text-forest" : "text-taupe hover:text-earth"
+              key={img.src}
+              onClick={() => {
+                setSelectedIndex(i);
+                scrollToThumb(i);
+              }}
+              aria-label={`Select image ${i + 1}`}
+              className={`relative shrink-0 w-20 sm:w-24 h-14 sm:h-16 rounded-sm overflow-hidden transition-all duration-300 ${
+                selectedIndex === i
+                  ? "ring-2 ring-red-500 opacity-100 scale-105"
+                  : "opacity-45 hover:opacity-85"
               }`}
             >
-              {tab}
-              {active === tab && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold" />}
+              <Image src={img.src} alt={img.alt} fill sizes="96px" className="object-cover" />
             </button>
           ))}
         </div>
-        {desc && (
-          <div className="max-w-2xl">
-            <h3
-              className="font-display text-forest mb-3"
-              style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)" }}
-            >
-              {desc.title}
-            </h3>
-            <p className="font-sans text-earth text-base leading-relaxed">{desc.text}</p>
-          </div>
-        )}
-      </div>
 
-      <div className="relative group/gallery">
-        <button
-          onClick={() => scroll(-1)}
-          aria-label="Scroll left"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-forest/80 hover:bg-forest text-cream rounded-full transition-all duration-300 opacity-0 group-hover/gallery:opacity-100 -translate-x-1/2 hover:scale-110"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <button
-          onClick={() => scroll(1)}
-          aria-label="Scroll right"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-forest/80 hover:bg-forest text-cream rounded-full transition-all duration-300 opacity-0 group-hover/gallery:opacity-100 translate-x-1/2 hover:scale-110"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-
-        <div ref={rowRef} className="flex gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {images[active].map((src, i) => (
-            <SiteImage
-              key={`${active}-${src}`}
-              src={src}
-              alt={`${active.toLowerCase()} view ${i + 1}`}
-              aspectRatio="aspect-[4/3]"
-              className="flex-shrink-0 w-[350px] md:w-[450px] cursor-pointer"
-              sizes="(max-width: 768px) 350px, 450px"
+        {/* Bottom Pagination Dots */}
+        <div className="flex justify-center items-center gap-1.5 mt-4">
+          {galleryImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setSelectedIndex(i);
+                scrollToThumb(i);
+              }}
+              aria-label={`Go to image ${i + 1}`}
+              className={`h-1 transition-all duration-300 rounded-full ${
+                selectedIndex === i ? "w-6 bg-red-500" : "w-1.5 bg-white/20 hover:bg-white/40"
+              }`}
             />
           ))}
         </div>
