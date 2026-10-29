@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -28,26 +28,42 @@ const galleryImages = [
 
 export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const thumbnailsRef = useRef<HTMLDivElement>(null);
 
-  const prev = () => {
-    const nextIdx = selectedIndex === 0 ? galleryImages.length - 1 : selectedIndex - 1;
-    setSelectedIndex(nextIdx);
-    scrollToThumb(nextIdx);
-  };
-
-  const next = () => {
-    const nextIdx = selectedIndex === galleryImages.length - 1 ? 0 : selectedIndex + 1;
-    setSelectedIndex(nextIdx);
-    scrollToThumb(nextIdx);
-  };
-
-  const scrollToThumb = (idx: number) => {
+  const scrollToThumb = useCallback((idx: number) => {
     const el = thumbnailsRef.current;
     if (!el) return;
     const thumbWidth = 90;
     el.scrollTo({ left: idx * thumbWidth - el.clientWidth / 2 + thumbWidth / 2, behavior: "smooth" });
-  };
+  }, []);
+
+  const prev = useCallback(() => {
+    setSelectedIndex((prevIdx) => {
+      const nextIdx = prevIdx === 0 ? galleryImages.length - 1 : prevIdx - 1;
+      scrollToThumb(nextIdx);
+      return nextIdx;
+    });
+  }, [scrollToThumb]);
+
+  const next = useCallback(() => {
+    setSelectedIndex((prevIdx) => {
+      const nextIdx = prevIdx === galleryImages.length - 1 ? 0 : prevIdx + 1;
+      scrollToThumb(nextIdx);
+      return nextIdx;
+    });
+  }, [scrollToThumb]);
+
+  // Auto-scroll every 3.5 seconds unless paused by hover/touch
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      next();
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [isPaused, next]);
 
   const current = galleryImages[selectedIndex];
 
@@ -73,7 +89,13 @@ export default function Gallery() {
         </div>
 
         {/* Featured Main Image */}
-        <div className="relative h-[340px] sm:h-[460px] md:h-[580px] w-full rounded-sm overflow-hidden mb-6 group shadow-md border border-cream/70">
+        <div
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+          className="relative h-[340px] sm:h-[460px] md:h-[580px] w-full rounded-sm overflow-hidden mb-6 group shadow-md border border-cream/70"
+        >
           <Image
             src={current.src}
             alt={current.alt}
@@ -109,6 +131,10 @@ export default function Gallery() {
         {/* Thumbnails Filmstrip matching Image 3 */}
         <div
           ref={thumbnailsRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
           className="flex gap-2.5 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {galleryImages.map((img, i) => (
