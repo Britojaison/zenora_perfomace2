@@ -3,22 +3,63 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 7rem;
-  padding-bottom: 5rem;
+  justify-content: center;
+  padding-top: 6.5rem;
+  padding-bottom: 4.5rem;
   overflow: hidden;
-  background-color: #0e0c0b;
+  background: linear-gradient(135deg, #dce8ef 0%, #fae6de 35%, #fae1d7 65%, #f6d1c7 100%);
 }
 
-.heroBg {
+.heroBgOverlay {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  background: linear-gradient(90deg, rgba(14, 12, 11, 0.62) 0%, rgba(14, 12, 11, 0.4) 55%, rgba(14, 12, 11, 0.4) 100%);
+  pointer-events: none;
+  background: radial-gradient(circle at 75% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
 }
 
-.heroCard {
-  background: #28362b;
-  border: 1px solid rgba(225, 178, 88, 0.3);
-  box-shadow: 0 25px 50px -12px rgba(14, 12, 11, 0.6);
-  border-radius: 2px;
+.verticalTextContainer {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 1rem;
+  width: 90px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 639px) {
+  .verticalTextContainer {
+    display: none;
+  }
+}
+
+.verticalTextInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(-90deg) !important;
+  transform-origin: center center;
+  letter-spacing: 0.28em;
+  font-family: var(--font-editorial), var(--font-display), Georgia, serif;
+  color: #33090d;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: 2.25rem;
+  line-height: 1.15;
+}
+
+@media (min-width: 1024px) {
+  .verticalTextContainer {
+    margin-right: 1.5rem;
+    width: 100px;
+    height: 380px;
+  }
+  .verticalTextInner {
+    font-size: 2.5rem;
+  }
 }

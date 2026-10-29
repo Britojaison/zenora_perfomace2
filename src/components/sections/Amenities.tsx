@@ -17,7 +17,7 @@ import {
 const keyAmenities = [
   { id: "kids", label: "Kids Play Area", icon: Sparkles },
   { id: "theatre", label: "Open Air Theatre", icon: Film },
-  { id: "yoga", label: "Yoga / Meditation Garden", icon: Flower2, featured: true },
+  { id: "yoga", label: "Yoga / Meditation Garden", icon: Flower2 },
   { id: "pool", label: "Swimming Pool", icon: Waves },
   { id: "coworking", label: "Co-working Space", icon: Building2 },
   { id: "gym", label: "Fitness Gym", icon: Dumbbell },
@@ -87,7 +87,6 @@ const allAmenities = [
 ];
 
 export default function Amenities() {
-  const [selectedKey, setSelectedKey] = useState("yoga");
   const [showAll, setShowAll] = useState(false);
 
   return (
@@ -107,24 +106,18 @@ export default function Amenities() {
           </p>
         </div>
 
-        {/* 6 Rounded Icon Cards matching Screenshot 1 */}
+        {/* 6 Rounded Icon Cards (Uniform static cards) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 mb-12">
           {keyAmenities.map((item) => {
             const Icon = item.icon;
-            const isSelected = selectedKey === item.id;
             return (
-              <button
+              <div
                 key={item.id}
-                onClick={() => setSelectedKey(item.id)}
-                className={`flex flex-col items-center justify-center p-6 rounded-xl border text-center transition-all duration-300 min-h-[140px] ${
-                  isSelected
-                    ? "bg-wine text-white border-wine shadow-lg scale-105"
-                    : "bg-cream/15 text-forest border-cream/70 hover:bg-cream/30 hover:border-wine/40"
-                }`}
+                className="flex flex-col items-center justify-center p-6 rounded-xl border border-cream/70 bg-cream/15 text-forest text-center min-h-[140px] select-none shadow-sm"
               >
-                <Icon className={`w-7 h-7 mb-3 ${isSelected ? "text-white" : "text-wine"}`} />
+                <Icon className="w-7 h-7 mb-3 text-wine" />
                 <span className="font-sans text-xs tracking-wider font-medium leading-tight">{item.label}</span>
-              </button>
+              </div>
             );
           })}
         </div>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const navLinks = [
@@ -30,7 +30,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/zenora_logo.svg"
+            src="/images/zenora_logo_dark.svg"
             alt="Zenora luxury villa community in Goldwins, Coimbatore"
             className="h-10 w-auto"
           />
@@ -50,29 +50,37 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="#contact" className={styles.enquire}>
-          Enquire
-        </a>
+        {/* Right Phone Button matching Screenshot */}
+        <div className="flex items-center gap-3">
+          <a
+            href="tel:+918870044213"
+            className="flex items-center gap-2 bg-wine hover:bg-wine-light text-white text-[11px] font-sans px-4 sm:px-5 py-2.5 rounded-sm tracking-wider uppercase transition-all shadow-sm font-medium"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">+91 88700 44213</span>
+            <span className="sm:hidden">Call</span>
+          </a>
 
-        <button
-          className="md:hidden text-white"
-          aria-label="Toggle menu"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+          <button
+            className="md:hidden text-forest p-1"
+            aria-label="Toggle menu"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-forest border-t border-white/10 px-6 py-6">
-          <nav className="flex flex-col gap-5">
+        <div className="md:hidden bg-[#faf6f0] border-t border-cream/70 px-6 py-6 shadow-xl">
+          <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="text-[11px] uppercase tracking-[0.2em] text-white/90"
+                className="text-xs uppercase tracking-[0.2em] text-forest font-medium"
               >
                 {link.name}
               </a>
@@ -80,9 +88,9 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-[11px] uppercase tracking-[0.2em] text-gold"
+              className="text-xs uppercase tracking-[0.2em] text-wine font-semibold pt-2 border-t border-cream/50"
             >
-              Enquire
+              Enquire Now
             </a>
           </nav>
         </div>

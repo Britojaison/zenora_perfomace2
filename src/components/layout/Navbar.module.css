@@ -5,14 +5,14 @@
   right: 0;
   z-index: 50;
   background: transparent;
-  transition: background 0.7s ease, box-shadow 0.7s ease;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .scrolled {
-  background: rgba(40, 54, 43, 0.96);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 24px rgba(14, 12, 11, 0.25);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
 
 .navLink {
@@ -20,12 +20,13 @@
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
-  transition: color 0.5s ease;
+  color: #28362b;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .navLink:hover {
-  color: #ffffff;
+  color: #561a28;
 }
 
 .underline {
@@ -33,35 +34,11 @@
   bottom: -4px;
   left: 0;
   width: 0;
-  height: 1px;
-  background: #ffffff;
-  transition: width 0.5s ease;
+  height: 2px;
+  background: #561a28;
+  transition: width 0.3s ease;
 }
 
 .navLink:hover .underline {
   width: 100%;
-}
-
-.enquire {
-  display: none;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 0.625rem 1.25rem;
-  transition: all 0.5s ease;
-}
-
-.enquire:hover {
-  background: #ffffff;
-  color: #28362b;
-  transform: scale(1.05);
-}
-
-@media (min-width: 768px) {
-  .enquire {
-    display: inline-flex;
-  }
 }
