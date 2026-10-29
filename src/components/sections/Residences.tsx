@@ -93,7 +93,7 @@ export default function Residences() {
                 Explore thoughtfully designed villa layouts that blend space, privacy, and architectural precision — crafted for elevated living.
               </p>
             </div>
-            <div className="flex gap-3 shrink-0 self-end md:self-auto">
+            <div className="flex gap-3 shrink-0 self-end md:self-auto md:hidden">
               <button
                 aria-label="Previous"
                 onClick={() => scroll(-1)}
@@ -113,30 +113,30 @@ export default function Residences() {
 
           <div
             ref={trackRef}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x md:snap-none pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {villas.map((villa) => (
               <div
                 key={villa.size}
-                className="group relative overflow-hidden shrink-0 snap-start w-[85%] md:w-[calc(50%-12px)] shadow-lg"
+                className="group relative overflow-hidden shrink-0 md:shrink snap-start w-[85%] sm:w-[70%] md:w-auto shadow-lg rounded-sm"
               >
-                <SiteImage src={villa.image} alt={villa.alt} aspectRatio="aspect-[4/3]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/40 to-transparent" />
+                <SiteImage src={villa.image} alt={villa.alt} aspectRatio="aspect-[4/5]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/45 to-transparent" />
                 <a
                   href="#contact"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-forest text-ivory font-sans text-[10px] uppercase tracking-[0.25em] px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-forest text-ivory font-sans text-[10px] uppercase tracking-[0.25em] px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-md"
                 >
                   View Plan
                 </a>
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <span className="font-sans text-gold text-[10px] uppercase tracking-[0.25em] block mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
+                  <span className="font-sans text-gold text-[10px] uppercase tracking-[0.25em] block mb-1.5">
                     {villa.badge}
                   </span>
-                  <h3 className="font-serif italic text-3xl text-white mb-3 flex items-baseline gap-1.5 leading-none">
+                  <h3 className="font-serif italic text-2xl lg:text-3xl text-white mb-2.5 flex items-baseline gap-1.5 leading-none">
                     <span>{villa.size}</span>
                     <span>Cent Villa</span>
                   </h3>
-                  <p className="font-sans text-cream text-sm leading-relaxed max-w-md">{villa.desc}</p>
+                  <p className="font-sans text-cream/90 text-xs sm:text-sm leading-relaxed">{villa.desc}</p>
                 </div>
               </div>
             ))}
