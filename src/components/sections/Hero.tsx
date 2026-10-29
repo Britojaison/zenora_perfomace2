@@ -43,8 +43,8 @@ export default function Hero(props: HeroProps) {
       {/* Background Architectural Image with Luxury Overlay */}
       <div className={styles.heroBgWrapper}>
         <Image
-          src="/images/aerial-view-club-hosue.jpg"
-          alt="Zenora luxury villa community aerial view in Goldwins, Coimbatore"
+          src="/images/Community Lounge.jpg"
+          alt="Zenora luxury community lounge in Goldwins, Coimbatore"
           fill
           priority
           sizes="100vw"
