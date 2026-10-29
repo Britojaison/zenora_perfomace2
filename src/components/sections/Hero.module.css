@@ -7,7 +7,7 @@
   padding-top: 6.5rem;
   padding-bottom: 4.5rem;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: #0e0c0b;
 }
 
 .heroBgWrapper {
@@ -24,12 +24,12 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(255, 255, 255, 0.84) 50%,
-    rgba(255, 255, 255, 0.90) 100%
+    rgba(14, 12, 11, 0.78) 0%,
+    rgba(14, 12, 11, 0.56) 45%,
+    rgba(14, 12, 11, 0.85) 100%
   );
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .verticalTextContainer {
@@ -68,7 +68,7 @@
   align-items: center;
   letter-spacing: 0.28em;
   font-family: var(--font-editorial), var(--font-display), Georgia, serif;
-  color: #28362b;
+  color: #ffffff;
   text-transform: uppercase;
   white-space: nowrap;
   font-size: 2rem;

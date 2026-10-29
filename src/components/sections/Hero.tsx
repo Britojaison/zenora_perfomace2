@@ -71,7 +71,7 @@ export default function Hero(props: HeroProps) {
               {/* Tall Framed Image Container */}
               <div className="hero-image-box relative w-[300px] sm:w-[350px] md:w-[390px] lg:w-[420px] h-[480px] sm:h-[530px] md:h-[580px] lg:h-[620px]">
                 {/* Offset Accent Outline Box (Extending top & right) */}
-                <div className="absolute -top-5 -right-5 w-full h-full border-2 border-forest pointer-events-none z-0" />
+                <div className="absolute -top-5 -right-5 w-full h-full border-2 border-[#e1b258]/60 pointer-events-none z-0" />
 
                 {/* Main Photo */}
                 <div className="relative w-full h-full rounded-none overflow-hidden shadow-2xl z-10 border border-white">

@@ -21,9 +21,9 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/zenora_logo_dark.svg"
+            src={scrolled ? "/images/zenora_logo_dark.svg" : "/images/zenora_logo.svg"}
             alt="Zenora luxury villa community in Goldwins, Coimbatore"
-            className="h-10 sm:h-12 w-auto"
+            className="h-10 sm:h-12 w-auto transition-opacity duration-300"
           />
         </Link>
 
