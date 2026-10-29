@@ -48,7 +48,7 @@ export default function Hero(props: HeroProps) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center scale-[1.02]"
+          className="object-cover object-center"
         />
         <div className={styles.heroBgOverlay} />
       </div>
