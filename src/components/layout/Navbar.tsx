@@ -6,10 +6,10 @@ import { Menu, X, Phone } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const navLinks = [
-  { name: "Residences", href: "#residences" },
-  { name: "Amenities", href: "#amenities" },
-  { name: "Location", href: "#location" },
-  { name: "Contact", href: "#contact" },
+  { name: "Residences", href: "/#residences" },
+  { name: "Amenities", href: "/#amenities" },
+  { name: "Location", href: "/#location" },
+  { name: "Contact", href: "/#contact" },
   { name: "Webverse", href: "https://zenvistas.spimproject.com/", external: true },
 ];
 
@@ -86,7 +86,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="text-xs uppercase tracking-[0.2em] text-wine font-semibold pt-2 border-t border-cream/50"
             >

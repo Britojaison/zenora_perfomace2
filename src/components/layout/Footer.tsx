@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -34,19 +32,19 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-wine font-medium mb-1">Navigate</p>
               {[
-                { name: "Residences", href: "#residences" },
-                { name: "Amenities", href: "#amenities" },
-                { name: "Gallery", href: "#gallery" },
-                { name: "Location", href: "#location" },
-                { name: "Contact", href: "#contact" },
+                { name: "Residences", href: "/#residences" },
+                { name: "Amenities", href: "/#amenities" },
+                { name: "Gallery", href: "/#gallery" },
+                { name: "Location", href: "/#location" },
+                { name: "Contact", href: "/#contact" },
               ].map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="font-sans text-earth hover:text-wine text-xs transition-colors"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -69,9 +67,24 @@ export default function Footer() {
           <div className="border-t border-cream/70 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="font-sans text-taupe text-[11px]">© {new Date().getFullYear()} ZenVistas. All rights reserved.</p>
             <div className="flex gap-6 flex-wrap justify-center">
-              <span className="font-sans text-taupe text-[11px] hover:text-forest cursor-pointer">Terms and Conditions</span>
-              <span className="font-sans text-taupe text-[11px] hover:text-forest cursor-pointer">Privacy Policy</span>
-              <span className="font-sans text-taupe text-[11px] hover:text-forest cursor-pointer">Cookies</span>
+              <Link
+                href="/terms-and-conditions"
+                className="font-sans text-taupe text-[11px] hover:text-forest transition-colors"
+              >
+                Terms and Conditions
+              </Link>
+              <Link
+                href="/privacy-policy"
+                className="font-sans text-taupe text-[11px] hover:text-forest transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/cookies"
+                className="font-sans text-taupe text-[11px] hover:text-forest transition-colors"
+              >
+                Cookies
+              </Link>
             </div>
           </div>
         </div>
