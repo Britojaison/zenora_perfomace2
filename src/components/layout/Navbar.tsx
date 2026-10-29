@@ -32,7 +32,7 @@ export default function Navbar() {
           {/* Phone Call CTA */}
           <a
             href="tel:+918870044213"
-            className="inline-flex items-center gap-2 sm:gap-2.5 bg-[#25060a] hover:bg-[#1a0306] text-white font-sans text-xs sm:text-[13px] uppercase tracking-[0.16em] font-semibold px-4 sm:px-6 py-3 sm:py-3.5 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99]"
+            className="inline-flex items-center gap-2 sm:gap-2.5 bg-forest-dark hover:bg-forest text-white font-sans text-xs sm:text-[13px] uppercase tracking-[0.16em] font-semibold px-4 sm:px-6 py-3 sm:py-3.5 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99]"
           >
             <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
             <span className="hidden sm:inline">+91 88700 44213</span>
@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Enquiry Now CTA */}
           <a
             href="/#contact"
-            className="inline-flex items-center justify-center bg-wine hover:bg-wine-light text-white font-sans text-xs sm:text-[13px] uppercase tracking-[0.16em] font-semibold px-4 sm:px-7 py-3 sm:py-3.5 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] cursor-pointer"
+            className="inline-flex items-center justify-center bg-forest hover:bg-forest-light text-white font-sans text-xs sm:text-[13px] uppercase tracking-[0.16em] font-semibold px-4 sm:px-7 py-3 sm:py-3.5 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] cursor-pointer"
           >
             Enquiry Now
           </a>

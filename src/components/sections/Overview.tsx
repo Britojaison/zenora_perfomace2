@@ -56,7 +56,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
           </div>
 
           {/* Wine Offset Accent Box */}
-          <div className="overview-accent-box absolute top-[8%] left-[26%] w-[68%] h-[64%] border-2 border-wine pointer-events-none z-0" />
+          <div className="overview-accent-box absolute top-[8%] left-[26%] w-[68%] h-[64%] border-2 border-forest pointer-events-none z-0" />
 
           {/* Bottom-Right Foreground Day Image */}
           <div className="overview-img-front absolute bottom-0 right-0 w-[72%] h-[66%] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] z-20 border-2 border-white">
@@ -71,7 +71,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
 
         {/* Right: Content with Highlights, RERA & Action Buttons */}
         <div className="lg:col-span-7">
-          <p className="overview-text-reveal font-sans text-gold text-xs uppercase tracking-[0.25em] mb-6">
+          <p className="overview-text-reveal font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-6">
             A New Standard
           </p>
 
@@ -98,7 +98,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
           {/* Important Points with Circular Checkmarks */}
           <div className="space-y-3.5 mb-8">
             <div className="overview-check-item flex items-start sm:items-center gap-3.5">
-              <span className="w-5 h-5 rounded-full bg-wine text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5 sm:mt-0">
+              <span className="w-5 h-5 rounded-full bg-forest text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5 sm:mt-0">
                 <Check className="w-3 h-3 stroke-[3]" />
               </span>
               <p className="font-sans text-sm sm:text-[15px] text-gray-700">
@@ -107,7 +107,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
             </div>
 
             <div className="overview-check-item flex items-start sm:items-center gap-3.5">
-              <span className="w-5 h-5 rounded-full bg-wine text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5 sm:mt-0">
+              <span className="w-5 h-5 rounded-full bg-forest text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5 sm:mt-0">
                 <Check className="w-3 h-3 stroke-[3]" />
               </span>
               <p className="font-sans text-sm sm:text-[15px] text-gray-700">
@@ -116,7 +116,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
             </div>
 
             <div className="overview-check-item flex items-start sm:items-center gap-3.5">
-              <span className="w-5 h-5 rounded-full bg-wine text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5 sm:mt-0">
+              <span className="w-5 h-5 rounded-full bg-forest text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5 sm:mt-0">
                 <Check className="w-3 h-3 stroke-[3]" />
               </span>
               <p className="font-sans text-sm sm:text-[15px] text-gray-700">
@@ -145,7 +145,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
                 href="https://rera.tn.gov.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-wine hover:underline text-[11px] mt-0.5 inline-block font-medium"
+                className="text-forest hover:underline text-[11px] mt-0.5 inline-block font-medium"
               >
                 www.rera.tn.gov.in
               </a>
@@ -157,7 +157,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
             <button
               type="button"
               onClick={onOpenBrochure}
-              className="overview-btn inline-flex items-center justify-center gap-2.5 bg-wine hover:bg-[#200508] text-white font-sans text-xs uppercase tracking-[0.18em] px-7 py-4 font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] cursor-pointer"
+              className="overview-btn inline-flex items-center justify-center gap-2.5 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.18em] px-7 py-4 font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>Download Brochure</span>

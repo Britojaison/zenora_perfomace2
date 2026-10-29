@@ -30,13 +30,13 @@ export default function Highlights() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
           <div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] text-forest leading-none">
-              Project <span className="font-display italic text-wine">Highlights</span>
+              Project <span className="font-display italic text-forest">Highlights</span>
             </h2>
           </div>
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2.5 bg-wine hover:bg-[#200508] text-white font-sans text-xs uppercase tracking-[0.2em] px-7 py-3.5 font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] self-start sm:self-auto cursor-pointer"
+            className="inline-flex items-center gap-2.5 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.2em] px-7 py-3.5 font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] self-start sm:self-auto cursor-pointer"
           >
             <Calendar className="w-4 h-4" />
             <span>Schedule A Site Visit</span>
@@ -52,7 +52,7 @@ export default function Highlights() {
                 key={index}
                 className="bg-white p-8 sm:p-10 shadow-sm border border-gray-100/70 flex flex-col items-center justify-center text-center aspect-square transition-all duration-300 hover:shadow-md hover:-translate-y-1 group"
               >
-                <div className="w-12 h-12 flex items-center justify-center mb-6 text-wine group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 flex items-center justify-center mb-6 text-forest group-hover:scale-110 transition-transform duration-300">
                   <Icon className="w-9 h-9 stroke-[1.4]" />
                 </div>
                 <p className="font-sans text-forest text-sm sm:text-[15px] font-medium leading-relaxed max-w-[210px]">

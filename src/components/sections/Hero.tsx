@@ -40,7 +40,18 @@ export default function Hero(props: HeroProps) {
 
   return (
     <section id="home" ref={containerRef} className={styles.heroSection}>
-      <div className={styles.heroBgOverlay} />
+      {/* Background Architectural Image with Luxury Overlay */}
+      <div className={styles.heroBgWrapper}>
+        <Image
+          src="/images/aerial-view-club-hosue.jpg"
+          alt="Zenora luxury villa community aerial view in Goldwins, Coimbatore"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center scale-[1.02]"
+        />
+        <div className={styles.heroBgOverlay} />
+      </div>
 
       {/* Main Container - Centered horizontally across viewport */}
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10 w-full flex items-center justify-center">
@@ -60,7 +71,7 @@ export default function Hero(props: HeroProps) {
               {/* Tall Framed Image Container */}
               <div className="hero-image-box relative w-[300px] sm:w-[350px] md:w-[390px] lg:w-[420px] h-[480px] sm:h-[530px] md:h-[580px] lg:h-[620px]">
                 {/* Offset Accent Outline Box (Extending top & right) */}
-                <div className="absolute -top-5 -right-5 w-full h-full border-2 border-wine pointer-events-none z-0" />
+                <div className="absolute -top-5 -right-5 w-full h-full border-2 border-forest pointer-events-none z-0" />
 
                 {/* Main Photo */}
                 <div className="relative w-full h-full rounded-none overflow-hidden shadow-2xl z-10 border border-white">
@@ -87,11 +98,11 @@ export default function Hero(props: HeroProps) {
                   </div>
 
                   {/* Center Divider */}
-                  <div className="w-px h-8 sm:h-9 bg-wine/25 shrink-0 mx-1 sm:mx-2" />
+                  <div className="w-px h-8 sm:h-9 bg-forest/25 shrink-0 mx-1 sm:mx-2" />
 
                   {/* Right Column: Units / Pricing */}
                   <div className="flex flex-col items-center justify-center text-center px-1 sm:px-2">
-                    <p className="font-serif text-base sm:text-xl md:text-2xl text-wine font-bold leading-tight whitespace-nowrap">
+                    <p className="font-serif text-base sm:text-xl md:text-2xl text-forest font-bold leading-tight whitespace-nowrap">
                       60 Villas*
                     </p>
                     <p className="font-serif italic text-[11px] sm:text-xs text-earth mt-0.5 whitespace-nowrap">
@@ -132,7 +143,7 @@ export default function Hero(props: HeroProps) {
                       placeholder="Your Name"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-wine font-sans rounded-none transition-colors"
+                      className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-forest font-sans rounded-none transition-colors"
                     />
                   </div>
 
@@ -167,13 +178,13 @@ export default function Hero(props: HeroProps) {
                       placeholder="email@example.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-wine font-sans rounded-none transition-colors"
+                      className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-forest font-sans rounded-none transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.25em] font-semibold transition-all duration-300 shadow-md"
+                    className="w-full py-4 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.25em] font-semibold transition-all duration-300 shadow-md cursor-pointer"
                   >
                     Submit
                   </button>

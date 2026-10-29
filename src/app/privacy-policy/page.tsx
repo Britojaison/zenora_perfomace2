@@ -128,7 +128,7 @@ export default function PrivacyPolicy() {
                   href="https://facebook.com/settings"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                  className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                 >
                   facebook.com/settings
                 </a>{" "}
@@ -137,7 +137,7 @@ export default function PrivacyPolicy() {
                   href="https://adssettings.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                  className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                 >
                   adssettings.google.com
                 </a>
@@ -168,7 +168,7 @@ export default function PrivacyPolicy() {
                 rights, write to{" "}
                 <a
                   href="mailto:privacy@zenvistas.co.in"
-                  className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                  className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                 >
                   privacy@zenvistas.co.in
                 </a>
@@ -220,7 +220,7 @@ export default function PrivacyPolicy() {
                   <strong className="text-forest">Email:</strong>{" "}
                   <a
                     href="mailto:info@zenvistas.co.in"
-                    className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                    className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                   >
                     info@zenvistas.co.in
                   </a>
@@ -229,7 +229,7 @@ export default function PrivacyPolicy() {
                   <strong className="text-forest">Phone:</strong>{" "}
                   <a
                     href="tel:+918870044213"
-                    className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                    className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                   >
                     +91 88700 44213
                   </a>

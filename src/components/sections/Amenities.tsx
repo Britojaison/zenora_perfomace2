@@ -117,14 +117,14 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
       <div className="px-6 md:px-12 max-w-screen-xl mx-auto">
         {/* Header matching site style */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-3">
+          <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-3">
             Lifestyle & Leisure
           </p>
           <h2
             className="font-display italic font-light text-forest"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            Curated <span className="text-wine font-serif not-italic">Amenities</span>
+            Curated <span className="text-forest font-serif not-italic">Amenities</span>
           </h2>
           <p className="font-sans text-earth text-sm md:text-base leading-relaxed mt-4">
             Discover a world of thoughtfully curated amenities designed to bring comfort, convenience, and luxury to
@@ -141,7 +141,7 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
                 key={item.id}
                 className="flex flex-col items-center justify-center p-6 rounded-xl border border-cream/70 bg-cream/15 text-forest text-center min-h-[140px] select-none shadow-sm"
               >
-                <Icon className="w-7 h-7 mb-3 text-wine" />
+                <Icon className="w-7 h-7 mb-3 text-forest" />
                 <span className="font-sans text-xs tracking-wider font-medium leading-tight">{item.label}</span>
               </div>
             );
@@ -153,7 +153,7 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
           <button
             type="button"
             onClick={handleToggle}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-pointer"
           >
             <Eye className="w-4 h-4" />
             {showAll ? "Hide Features" : "View All Features"}

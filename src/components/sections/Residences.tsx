@@ -103,13 +103,13 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
         <div className="pricing-table-anim mb-24">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] text-gray-900 leading-none">
-              Pricing <span className="font-display italic text-wine">Table</span>
+              Pricing <span className="font-display italic text-forest">Table</span>
             </h2>
           </div>
 
           <div className="max-w-4xl mx-auto bg-white shadow-sm border border-gray-200 overflow-hidden">
-            {/* Table Header: High-contrast Wine Red with White Text */}
-            <div className="grid grid-cols-3 bg-wine text-white font-sans text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-center divide-x divide-white/20">
+            {/* Table Header: High-contrast Forest Green with White Text */}
+            <div className="grid grid-cols-3 bg-forest text-white font-sans text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-center divide-x divide-white/20">
               <div className="py-4 px-2 sm:px-4">Type</div>
               <div className="py-4 px-2 sm:px-4">Land Area</div>
               <div className="py-4 px-2 sm:px-4">Built-up Area</div>
@@ -143,7 +143,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
         <div>
           <div className="floor-plan-header flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-4">Project Details</p>
+              <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-4">Project Details</p>
               <h2
                 className="font-display italic font-light text-forest"
                 style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}

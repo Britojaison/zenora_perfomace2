@@ -60,7 +60,7 @@ export default function Contact() {
           </div>
 
           {/* Accent Frame Box */}
-          <div className="contact-frame-box absolute top-[8%] left-[28%] w-[66%] h-[68%] border border-wine/40 pointer-events-none" />
+          <div className="contact-frame-box absolute top-[8%] left-[28%] w-[66%] h-[68%] border border-forest/40 pointer-events-none" />
 
           {/* Front/Bottom Image */}
           <div className="contact-img-front absolute bottom-0 right-0 w-[70%] h-[68%] rounded-sm overflow-hidden shadow-2xl">
@@ -77,12 +77,12 @@ export default function Contact() {
         {/* Right: Contact Form matching Screenshot 5 */}
         <div className="lg:col-span-6">
           <div className="contact-header-anim mb-6">
-            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-2">Get In Touch</p>
+            <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-2">Get In Touch</p>
             <h2
               className="font-display italic font-light text-forest leading-[1.1]"
               style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)" }}
             >
-              Start Your <span className="text-wine">Property Journey</span>
+              Start Your <span className="text-forest">Property Journey</span>
             </h2>
           </div>
 
@@ -107,7 +107,7 @@ export default function Contact() {
                     placeholder="Your Name"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full bg-white border border-cream px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-wine transition-colors font-sans rounded-none"
+                    className="w-full bg-white border border-cream px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-forest transition-colors font-sans rounded-none"
                   />
                 </div>
 
@@ -140,13 +140,13 @@ export default function Contact() {
                     placeholder="email@example.com"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full bg-white border border-cream px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-wine transition-colors font-sans rounded-none"
+                    className="w-full bg-white border border-cream px-4 py-3 text-sm text-forest placeholder:text-taupe focus:outline-none focus:border-forest transition-colors font-sans rounded-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.25em] flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+                  className="w-full py-4 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.25em] flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   Book A Site Visit
@@ -162,10 +162,10 @@ export default function Contact() {
           {/* Quick contact strip */}
           <div className="contact-strip-anim flex flex-wrap items-center gap-6 mt-6 text-xs text-earth font-sans">
             <span className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-wine" /> Goldwins, Coimbatore
+              <MapPin className="w-3.5 h-3.5 text-forest" /> Goldwins, Coimbatore
             </span>
-            <a href="tel:+918870044213" className="flex items-center gap-2 hover:text-wine transition-colors">
-              <Phone className="w-3.5 h-3.5 text-wine" /> +91 88700 44213
+            <a href="tel:+918870044213" className="flex items-center gap-2 hover:text-forest transition-colors">
+              <Phone className="w-3.5 h-3.5 text-forest" /> +91 88700 44213
             </a>
             <a
               href="https://api.whatsapp.com/send/?phone=919789003828&text&type=phone_number&app_absent=0"
@@ -175,8 +175,8 @@ export default function Contact() {
             >
               <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" /> WhatsApp Chat
             </a>
-            <a href="mailto:info@zenvistas.co.in" className="flex items-center gap-2 hover:text-wine transition-colors">
-              <Mail className="w-3.5 h-3.5 text-wine" /> info@zenvistas.co.in
+            <a href="mailto:info@zenvistas.co.in" className="flex items-center gap-2 hover:text-forest transition-colors">
+              <Mail className="w-3.5 h-3.5 text-forest" /> info@zenvistas.co.in
             </a>
           </div>
         </div>

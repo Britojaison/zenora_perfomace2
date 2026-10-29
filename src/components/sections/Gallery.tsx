@@ -57,17 +57,17 @@ export default function Gallery() {
         {/* Header with counter matching Image 3 */}
         <div className="flex items-end justify-between mb-8">
           <div>
-            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-2">Visual Tour</p>
+            <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-2">Visual Tour</p>
             <h2
               className="font-display italic font-light text-forest"
               style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
             >
-              Project <span className="text-wine font-serif not-italic">Gallery</span>
+              Project <span className="text-forest font-serif not-italic">Gallery</span>
             </h2>
           </div>
           <div className="flex items-center gap-2 font-display text-lg text-forest/70">
             <span className="text-2xl font-serif text-forest">{selectedIndex + 1}</span>
-            <span className="text-wine font-sans text-xs">—</span>
+            <span className="text-forest font-sans text-xs">—</span>
             <span className="text-sm font-sans text-earth/50">{galleryImages.length}</span>
           </div>
         </div>
@@ -88,14 +88,14 @@ export default function Gallery() {
           <button
             onClick={prev}
             aria-label="Previous gallery image"
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-forest hover:text-wine flex items-center justify-center shadow-md backdrop-blur-sm transition-all border border-cream/70"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-forest hover:text-forest-light flex items-center justify-center shadow-md backdrop-blur-sm transition-all border border-cream/70"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={next}
             aria-label="Next gallery image"
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-forest hover:text-wine flex items-center justify-center shadow-md backdrop-blur-sm transition-all border border-cream/70"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-forest hover:text-forest-light flex items-center justify-center shadow-md backdrop-blur-sm transition-all border border-cream/70"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -121,7 +121,7 @@ export default function Gallery() {
               aria-label={`Select image ${i + 1}`}
               className={`relative shrink-0 w-20 sm:w-24 h-14 sm:h-16 rounded-sm overflow-hidden border transition-all duration-300 ${
                 selectedIndex === i
-                  ? "ring-2 ring-wine ring-offset-2 opacity-100 scale-105 border-wine shadow-sm"
+                  ? "ring-2 ring-forest ring-offset-2 opacity-100 scale-105 border-forest shadow-sm"
                   : "opacity-60 hover:opacity-100 border-cream"
               }`}
             >
@@ -141,7 +141,7 @@ export default function Gallery() {
               }}
               aria-label={`Go to image ${i + 1}`}
               className={`h-1.5 transition-all duration-300 rounded-full ${
-                selectedIndex === i ? "w-6 bg-wine" : "w-1.5 bg-cream hover:bg-taupe"
+                selectedIndex === i ? "w-6 bg-forest" : "w-1.5 bg-cream hover:bg-taupe"
               }`}
             />
           ))}

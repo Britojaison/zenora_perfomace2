@@ -105,7 +105,7 @@ export default function CookiesPage() {
                           <span
                             className={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
                               item.consent === "Required"
-                                ? "bg-wine/10 text-wine"
+                                ? "bg-forest/15 text-forest"
                                 : "bg-forest/10 text-forest"
                             }`}
                           >
@@ -139,7 +139,7 @@ export default function CookiesPage() {
                     href="https://facebook.com/settings"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                    className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                   >
                     facebook.com/settings
                   </a>{" "}
@@ -151,7 +151,7 @@ export default function CookiesPage() {
                     href="https://adssettings.google.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                    className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                   >
                     adssettings.google.com
                   </a>
@@ -169,7 +169,7 @@ export default function CookiesPage() {
                 For questions about our use of cookies:{" "}
                 <a
                   href="mailto:info@zenvistas.co.in"
-                  className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                  className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                 >
                   info@zenvistas.co.in
                 </a>

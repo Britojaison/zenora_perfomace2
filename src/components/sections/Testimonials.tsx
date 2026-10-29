@@ -33,12 +33,12 @@ export default function Testimonials() {
     <section id="testimonials" className="py-24 bg-cream/30">
       <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
-          <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-3">Client Stories</p>
+          <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-3">Client Stories</p>
           <h2
             className="font-display italic font-light text-forest mb-6"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            What Our <span className="text-wine">Residents Say</span>
+            What Our <span className="text-forest">Residents Say</span>
           </h2>
 
           {/* Google Reviews Badge */}
@@ -75,9 +75,9 @@ export default function Testimonials() {
         <div className="max-w-2xl mx-auto">
           <div className="bg-white p-8 md:p-12 shadow-sm border border-cream/50 relative text-center">
             <h3 className="font-serif text-xl md:text-2xl text-forest mb-3">{active.name}</h3>
-            <div className="flex justify-center gap-1 text-wine mb-6">
+            <div className="flex justify-center gap-1 text-forest mb-6">
               {[...Array(active.rating)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-wine stroke-none" />
+                <Star key={i} className="w-4 h-4 fill-forest stroke-none" />
               ))}
             </div>
             <p className="font-sans text-earth text-sm md:text-base leading-relaxed italic max-w-lg mx-auto">
@@ -94,7 +94,7 @@ export default function Testimonials() {
                   onClick={() => setCurrent(idx)}
                   aria-label={`Go to testimonial ${idx + 1}`}
                   className={`h-1.5 transition-all duration-300 rounded-full ${
-                    current === idx ? "w-8 bg-wine" : "w-2 bg-cream hover:bg-taupe"
+                    current === idx ? "w-8 bg-forest" : "w-2 bg-cream hover:bg-taupe"
                   }`}
                 />
               ))}
@@ -104,14 +104,14 @@ export default function Testimonials() {
               <button
                 onClick={prev}
                 aria-label="Previous review"
-                className="w-9 h-9 border border-cream hover:border-wine text-forest hover:text-wine flex items-center justify-center transition-colors bg-white"
+                className="w-9 h-9 border border-cream hover:border-forest text-forest hover:text-forest-light flex items-center justify-center transition-colors bg-white cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={next}
                 aria-label="Next review"
-                className="w-9 h-9 border border-cream hover:border-wine text-forest hover:text-wine flex items-center justify-center transition-colors bg-white"
+                className="w-9 h-9 border border-cream hover:border-forest text-forest hover:text-forest-light flex items-center justify-center transition-colors bg-white cursor-pointer"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>

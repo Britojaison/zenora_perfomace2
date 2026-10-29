@@ -94,7 +94,7 @@ export default function EnquiryModal({
               <button
                 type="button"
                 onClick={handleManualClose}
-                className="mt-4 px-6 py-2.5 bg-wine hover:bg-wine-light text-white text-xs font-sans uppercase tracking-wider font-semibold transition-colors cursor-pointer"
+                className="mt-4 px-6 py-2.5 bg-forest hover:bg-forest-light text-white text-xs font-sans uppercase tracking-wider font-semibold transition-colors cursor-pointer"
               >
                 Close
               </button>
@@ -111,7 +111,7 @@ export default function EnquiryModal({
                   placeholder="Your Name"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-wine font-sans rounded-none transition-colors"
+                  className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-forest font-sans rounded-none transition-colors"
                 />
               </div>
 
@@ -146,13 +146,13 @@ export default function EnquiryModal({
                   placeholder="email@example.com"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-wine font-sans rounded-none transition-colors"
+                  className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-forest font-sans rounded-none transition-colors"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.25em] font-semibold transition-all duration-300 shadow-md cursor-pointer mt-1"
+                className="w-full py-3.5 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.25em] font-semibold transition-all duration-300 shadow-md cursor-pointer mt-1"
               >
                 Submit
               </button>

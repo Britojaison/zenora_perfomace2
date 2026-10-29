@@ -67,12 +67,12 @@ export default function Location() {
     <section id="location" className="py-24 px-6 md:px-12 max-w-screen-xl mx-auto">
       {/* Header matching Screenshot 2 */}
       <div className="text-center mb-14">
-        <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-3">Explore The Area</p>
+        <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-3">Explore The Area</p>
         <h2
           className="font-display italic font-light text-forest"
           style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
         >
-          Location <span className="text-wine">Highlights</span>
+          Location <span className="text-forest">Highlights</span>
         </h2>
       </div>
 
@@ -82,7 +82,7 @@ export default function Location() {
         <button
           onClick={() => setActiveCategory("schools")}
           className={`group relative h-[360px] md:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
-            activeCategory === "schools" ? "ring-2 ring-wine ring-offset-2 scale-[1.02]" : "hover:opacity-95"
+            activeCategory === "schools" ? "ring-2 ring-forest ring-offset-2 scale-[1.02]" : "hover:opacity-95"
           }`}
         >
           <Image
@@ -103,7 +103,7 @@ export default function Location() {
         <button
           onClick={() => setActiveCategory("hospitals")}
           className={`group relative h-[360px] md:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
-            activeCategory === "hospitals" ? "ring-2 ring-wine ring-offset-2 scale-[1.02]" : "hover:opacity-95"
+            activeCategory === "hospitals" ? "ring-2 ring-forest ring-offset-2 scale-[1.02]" : "hover:opacity-95"
           }`}
         >
           <Image
@@ -124,7 +124,7 @@ export default function Location() {
         <button
           onClick={() => setActiveCategory("connectivity")}
           className={`group relative h-[360px] md:h-[420px] rounded-sm overflow-hidden text-left focus:outline-none transition-all duration-300 ${
-            activeCategory === "connectivity" ? "ring-2 ring-wine ring-offset-2 scale-[1.02]" : "hover:opacity-95"
+            activeCategory === "connectivity" ? "ring-2 ring-forest ring-offset-2 scale-[1.02]" : "hover:opacity-95"
           }`}
         >
           <Image
@@ -144,10 +144,10 @@ export default function Location() {
         {/* Card 4: Details Panel (Matches Image 2 Right Column) */}
         <div className="bg-white p-7 rounded-sm shadow-sm border border-cream/50 flex flex-col justify-between h-[360px] md:h-[420px]">
           <div>
-            <div className="flex items-center gap-3 text-wine mb-2">
+            <div className="flex items-center gap-3 text-forest mb-2">
               <IconComponent className="w-6 h-6 stroke-[1.5]" />
             </div>
-            <div className="w-12 h-0.5 bg-wine mb-4" />
+            <div className="w-12 h-0.5 bg-forest mb-4" />
             <span className="font-sans text-[9px] uppercase tracking-[0.25em] text-taupe block mb-1">
               {currentData.categoryLabel}
             </span>
@@ -157,7 +157,7 @@ export default function Location() {
               {currentData.items.slice(0, 5).map((item) => (
                 <div key={item.name} className="py-2.5 flex items-center justify-between text-xs">
                   <span className="font-sans text-earth truncate max-w-[170px]">{item.name}</span>
-                  <span className="font-sans text-wine font-semibold shrink-0 ml-2">{item.distance}</span>
+                  <span className="font-sans text-forest font-semibold shrink-0 ml-2">{item.distance}</span>
                 </div>
               ))}
             </div>
@@ -167,7 +167,7 @@ export default function Location() {
             href="https://maps.google.com/?q=Goldwins+Coimbatore"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.2em] text-forest hover:text-wine transition-colors pt-3 border-t border-cream/40"
+            className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.2em] text-forest hover:text-forest-light transition-colors pt-3 border-t border-cream/40"
           >
             <Navigation className="w-3 h-3" />
             View On Google Maps

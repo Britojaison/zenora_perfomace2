@@ -11,7 +11,7 @@ export default function Footer() {
           href="https://rera.tn.gov.in/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-sans text-wine text-xs hover:underline transition-colors mt-0.5 inline-block"
+          className="font-sans text-forest font-semibold text-xs hover:underline transition-colors mt-0.5 inline-block"
         >
           https://rera.tn.gov.in/
         </a>
@@ -33,7 +33,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-taupe/30 bg-white/70 text-forest hover:bg-wine hover:text-white hover:border-transparent transition-all duration-300 shadow-sm hover:scale-105"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-taupe/30 bg-white/70 text-forest hover:bg-forest hover:text-white hover:border-transparent transition-all duration-300 shadow-sm hover:scale-105"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h3V1H13c-3.3 0-5 1.7-5 5v2z" />
@@ -44,7 +44,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-taupe/30 bg-white/70 text-forest hover:bg-wine hover:text-white hover:border-transparent transition-all duration-300 shadow-sm hover:scale-105"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-taupe/30 bg-white/70 text-forest hover:bg-forest hover:text-white hover:border-transparent transition-all duration-300 shadow-sm hover:scale-105"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -78,7 +78,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-wine font-medium mb-1">Navigate</p>
+              <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-forest font-semibold mb-1">Navigate</p>
               {[
                 { name: "Residences", href: "/#residences" },
                 { name: "Amenities", href: "/#amenities" },
@@ -89,7 +89,7 @@ export default function Footer() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="font-sans text-earth hover:text-wine text-xs transition-colors"
+                  className="font-sans text-earth hover:text-forest text-xs transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -97,22 +97,22 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-wine font-medium mb-1">Contact</p>
+              <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-forest font-semibold mb-1">Contact</p>
               <a
                 href="https://api.whatsapp.com/send/?phone=919789003828&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-wine text-xs hover:underline flex items-center gap-1.5"
+                className="font-sans text-forest font-medium text-xs hover:underline flex items-center gap-1.5"
               >
                 WhatsApp: +91 97890 03828
               </a>
-              <a href="tel:+918870044213" className="font-sans text-wine text-xs hover:underline">
+              <a href="tel:+918870044213" className="font-sans text-forest font-medium text-xs hover:underline">
                 Phone: +91 88700 44213
               </a>
-              <a href="mailto:info@zenvistas.co.in" className="font-sans text-wine text-xs hover:underline">
+              <a href="mailto:info@zenvistas.co.in" className="font-sans text-forest font-medium text-xs hover:underline">
                 info@zenvistas.co.in
               </a>
-              <a href="https://zenoravillas.in" className="font-sans text-wine text-xs hover:underline">
+              <a href="https://zenoravillas.in" className="font-sans text-forest font-medium text-xs hover:underline">
                 zenoravillas.in
               </a>
               <p className="font-sans text-earth text-sm leading-relaxed mt-1">

@@ -82,7 +82,7 @@ export default function TermsAndConditions() {
                   href="https://rera.tn.gov.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-wine font-medium underline underline-offset-4 hover:text-gold transition-colors"
+                  className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                 >
                   tnrera.in
                 </a>
@@ -103,7 +103,7 @@ export default function TermsAndConditions() {
                 communications at any time by writing to{" "}
                 <a
                   href="mailto:info@zenvistas.co.in"
-                  className="text-wine font-medium underline underline-offset-4 hover:text-gold transition-colors"
+                  className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                 >
                   info@zenvistas.co.in
                 </a>
@@ -195,7 +195,7 @@ export default function TermsAndConditions() {
                   <strong className="text-forest">Email:</strong>{" "}
                   <a
                     href="mailto:info@zenvistas.co.in"
-                    className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                    className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                   >
                     info@zenvistas.co.in
                   </a>
@@ -204,7 +204,7 @@ export default function TermsAndConditions() {
                   <strong className="text-forest">Phone:</strong>{" "}
                   <a
                     href="tel:+918870044213"
-                    className="text-wine underline underline-offset-4 hover:text-gold transition-colors"
+                    className="text-forest font-medium underline underline-offset-4 hover:text-forest-light transition-colors"
                   >
                     +91 88700 44213
                   </a>
