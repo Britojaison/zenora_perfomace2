@@ -1,12 +1,39 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { Calendar, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 78%",
+          toggleActions: "play none none none",
+        },
+        defaults: { ease: "power3.out" },
+      });
+
+      tl.from(".contact-img-back", { opacity: 0, x: -30, scale: 0.95, duration: 1 })
+        .from(".contact-frame-box", { opacity: 0, scale: 0.9, duration: 0.8 }, "-=0.7")
+        .from(".contact-img-front", { opacity: 0, y: 35, scale: 0.95, duration: 1 }, "-=0.7")
+        .from(".contact-header-anim", { opacity: 0, y: 20, duration: 0.8 }, "-=0.7")
+        .from(".contact-form-box", { opacity: 0, y: 30, scale: 0.98, duration: 0.9 }, "-=0.6")
+        .from(".contact-strip-anim", { opacity: 0, y: 15, duration: 0.6 }, "-=0.4");
+    },
+    { scope: sectionRef }
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,12 +41,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 max-w-screen-xl mx-auto">
+    <section id="contact" ref={sectionRef} className="py-24 px-6 md:px-12 max-w-screen-xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left: Overlapping Photos matching Screenshot 5 */}
         <div className="lg:col-span-6 relative h-[440px] sm:h-[500px] w-full max-w-[500px] mx-auto">
           {/* Back/Top Image */}
-          <div className="absolute top-0 left-0 w-[68%] h-[68%] rounded-sm overflow-hidden shadow-md">
+          <div className="contact-img-back absolute top-0 left-0 w-[68%] h-[68%] rounded-sm overflow-hidden shadow-md">
             <Image
               src="/images/aerial-view-club-hosue.jpg"
               alt="Zenora luxury villa community Goldwins"
@@ -30,10 +57,10 @@ export default function Contact() {
           </div>
 
           {/* Accent Frame Box */}
-          <div className="absolute top-[8%] left-[28%] w-[66%] h-[68%] border border-wine/40 pointer-events-none" />
+          <div className="contact-frame-box absolute top-[8%] left-[28%] w-[66%] h-[68%] border border-wine/40 pointer-events-none" />
 
           {/* Front/Bottom Image */}
-          <div className="absolute bottom-0 right-0 w-[70%] h-[68%] rounded-sm overflow-hidden shadow-2xl">
+          <div className="contact-img-front absolute bottom-0 right-0 w-[70%] h-[68%] rounded-sm overflow-hidden shadow-2xl">
             <Image
               src="/images/street-view.jpg"
               alt="Zenora architectural street view"
@@ -46,7 +73,7 @@ export default function Contact() {
 
         {/* Right: Contact Form matching Screenshot 5 */}
         <div className="lg:col-span-6">
-          <div className="mb-6">
+          <div className="contact-header-anim mb-6">
             <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-2">Get In Touch</p>
             <h2
               className="font-display italic font-light text-forest leading-[1.1]"
@@ -57,7 +84,7 @@ export default function Contact() {
           </div>
 
           {/* Form Container Card */}
-          <div className="bg-cream/20 p-8 sm:p-10 rounded-sm border border-cream/70 shadow-sm">
+          <div className="contact-form-box bg-cream/20 p-8 sm:p-10 rounded-sm border border-cream/70 shadow-sm">
             {submitted ? (
               <div className="py-12 text-center">
                 <p className="font-display italic font-light text-2xl text-forest mb-2">Thank you.</p>
@@ -116,7 +143,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.25em] flex items-center justify-center gap-2 transition-all duration-300 shadow-md"
+                  className="w-full py-4 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.25em] flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   Book A Site Visit
@@ -130,7 +157,7 @@ export default function Contact() {
           </div>
 
           {/* Quick contact strip */}
-          <div className="flex flex-wrap items-center gap-6 mt-6 text-xs text-earth font-sans">
+          <div className="contact-strip-anim flex flex-wrap items-center gap-6 mt-6 text-xs text-earth font-sans">
             <span className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-wine" /> Goldwins, Coimbatore
             </span>

@@ -1,8 +1,13 @@
 "use client";
 
 import React, { useRef } from "react";
-import { ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import SiteImage from "@/components/ui/SiteImage";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const villas = [
   {
@@ -36,6 +41,7 @@ interface ResidencesProps {
 }
 
 export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
+  const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: number) => {
@@ -44,11 +50,57 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
     el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
   };
 
+  useGSAP(
+    () => {
+      // Pricing Table Reveal
+      gsap.from(".pricing-table-anim", {
+        scrollTrigger: {
+          trigger: ".pricing-table-anim",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.9,
+        ease: "power3.out",
+      });
+
+      // Floor Plan Header Reveal
+      gsap.from(".floor-plan-header", {
+        scrollTrigger: {
+          trigger: ".floor-plan-header",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 25,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      // Villa Cards Staggered Reveal
+      gsap.from(".villa-card-anim", {
+        scrollTrigger: {
+          trigger: ".villa-card-anim",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 45,
+        scale: 0.96,
+        duration: 0.9,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    },
+    { scope: sectionRef }
+  );
+
   return (
-    <section id="residences" className="py-24 bg-[#faf5f0]/50">
+    <section id="residences" ref={sectionRef} className="py-24 bg-[#faf5f0]/50">
       <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
         {/* Pricing Table (Matches Reference Layout) */}
-        <div className="mb-24">
+        <div className="pricing-table-anim mb-24">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] text-gray-900 leading-none">
               Pricing <span className="font-display italic text-wine">Table</span>
@@ -58,39 +110,28 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
           <div className="max-w-4xl mx-auto bg-white shadow-sm border border-gray-200 overflow-hidden">
             {/* Table Header: High-contrast Wine Red with White Text */}
             <div className="grid grid-cols-3 bg-wine text-white font-sans text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-center divide-x divide-white/20">
-              <div className="py-4 sm:py-5 px-3">Unit Type</div>
-              <div className="py-4 sm:py-5 px-3">Built Up Area</div>
-              <div className="py-4 sm:py-5 px-3">Unit Plan</div>
+              <div className="py-4 px-2 sm:px-4">Type</div>
+              <div className="py-4 px-2 sm:px-4">Land Area</div>
+              <div className="py-4 px-2 sm:px-4">Built-up Area</div>
             </div>
 
-            {/* Table Rows: Clear borders & readable typography */}
-            <div className="divide-y divide-gray-200">
-              {villas.map((villa) => (
+            {/* Table Body: Alternating Rows */}
+            <div className="divide-y divide-gray-100 font-sans text-xs sm:text-sm text-center">
+              {[
+                { type: "4 BHK", land: "5.5 Cents", builtUp: "2,850 – 3,250 Sq.ft." },
+                { type: "4 BHK", land: "7 Cents", builtUp: "3,750 – 4,150 Sq.ft." },
+                { type: "5 BHK", land: "11 Cents", builtUp: "5,200 – 5,850 Sq.ft." },
+              ].map((row, idx) => (
                 <div
-                  key={villa.size}
-                  className="grid grid-cols-3 items-center text-center divide-x divide-gray-200 bg-white hover:bg-cream/20 transition-colors"
+                  key={row.land}
+                  className={`grid grid-cols-3 divide-x divide-gray-100 text-gray-800 ${
+                    idx % 2 === 1 ? "bg-[#faf7f3]" : "bg-white"
+                  } hover:bg-[#f5ede4] transition-colors`}
                 >
-                  <div className="py-5 sm:py-6 px-3 font-serif text-gray-900 font-semibold text-sm sm:text-base">
-                    {villa.badge} ({villa.size} Cent)
-                  </div>
-                  <div className="py-5 sm:py-6 px-3 font-sans text-gray-700 font-medium text-xs sm:text-sm">
-                    {villa.builtUp}
-                  </div>
-                  <div className="py-4 px-3 flex items-center justify-center">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        if (onOpenPlan) {
-                          onOpenPlan(villa.size);
-                        } else {
-                          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      className="inline-flex items-center gap-1.5 bg-wine hover:bg-[#200508] text-white text-[10px] sm:text-xs uppercase tracking-wider px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-300 shadow-xs hover:shadow-sm font-medium cursor-pointer"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      <span>Download Unit Plan</span>
-                    </button>
+                  <div className="py-4 px-2 sm:px-4 font-semibold text-gray-900">{row.type}</div>
+                  <div className="py-4 px-2 sm:px-4 font-medium">{row.land}</div>
+                  <div className="py-4 px-2 sm:px-4 text-gray-600 font-mono text-[11px] sm:text-xs">
+                    {row.builtUp}
                   </div>
                 </div>
               ))}
@@ -100,7 +141,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
 
         {/* Floor Plan Slider (Matches Image 5) */}
         <div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="floor-plan-header flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-4">Project Details</p>
               <h2
@@ -138,7 +179,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
             {villas.map((villa) => (
               <div
                 key={villa.size}
-                className="group relative overflow-hidden shrink-0 md:shrink snap-start w-[85%] sm:w-[70%] md:w-auto shadow-lg rounded-sm"
+                className="villa-card-anim group relative overflow-hidden shrink-0 md:shrink snap-start w-[85%] sm:w-[70%] md:w-auto shadow-lg rounded-sm"
               >
                 <SiteImage src={villa.image} alt={villa.alt} aspectRatio="aspect-[4/5]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/45 to-transparent" />
