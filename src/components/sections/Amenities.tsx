@@ -115,15 +115,18 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
   return (
     <section id="amenities" className="py-24 bg-white">
       <div className="px-6 md:px-12 max-w-screen-xl mx-auto">
-        {/* Header matching Screenshot 1 */}
+        {/* Header matching site style */}
         <div className="text-center max-w-2xl mx-auto mb-14">
+          <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-3">
+            Lifestyle & Leisure
+          </p>
           <h2
-            className="font-serif tracking-widest text-forest uppercase font-normal mb-4"
-            style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}
+            className="font-display italic font-light text-forest"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            Amenities
+            Curated <span className="text-wine font-serif not-italic">Amenities</span>
           </h2>
-          <p className="font-sans text-earth text-sm md:text-base leading-relaxed">
+          <p className="font-sans text-earth text-sm md:text-base leading-relaxed mt-4">
             Discover a world of thoughtfully curated amenities designed to bring comfort, convenience, and luxury to
             your modern lifestyle.
           </p>
