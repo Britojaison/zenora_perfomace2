@@ -31,7 +31,11 @@ const villas = [
   },
 ];
 
-export default function Residences() {
+interface ResidencesProps {
+  onOpenPlan?: (size?: string) => void;
+}
+
+export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
   const trackRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: number) => {
@@ -73,13 +77,20 @@ export default function Residences() {
                     {villa.builtUp}
                   </div>
                   <div className="py-4 px-3 flex items-center justify-center">
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-1.5 bg-wine hover:bg-[#200508] text-white text-[10px] sm:text-xs uppercase tracking-wider px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-300 shadow-xs hover:shadow-sm font-medium"
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (onOpenPlan) {
+                          onOpenPlan(villa.size);
+                        } else {
+                          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                      className="inline-flex items-center gap-1.5 bg-wine hover:bg-[#200508] text-white text-[10px] sm:text-xs uppercase tracking-wider px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-300 shadow-xs hover:shadow-sm font-medium cursor-pointer"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>Download Unit Plan</span>
-                    </a>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -131,12 +142,19 @@ export default function Residences() {
               >
                 <SiteImage src={villa.image} alt={villa.alt} aspectRatio="aspect-[4/5]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/45 to-transparent" />
-                <a
-                  href="#contact"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-forest hover:bg-forest-light text-ivory font-sans text-[10px] uppercase tracking-[0.25em] px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:scale-105 z-10"
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (onOpenPlan) {
+                      onOpenPlan(villa.size);
+                    } else {
+                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-forest hover:bg-forest-light text-ivory font-sans text-[10px] uppercase tracking-[0.25em] px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:scale-105 z-10 cursor-pointer"
                 >
                   View Plan
-                </a>
+                </button>
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
                   <span className="font-sans text-gold text-[10px] uppercase tracking-[0.25em] block mb-1.5">
                     {villa.badge}

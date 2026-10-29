@@ -18,13 +18,23 @@ import StickyContactBar from "@/components/ui/StickyContactBar";
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMeta, setModalMeta] = useState({
-    title: "Begin your Zenora journey.",
-    subtitle: "Get in Touch",
+    title: "Request Details",
+    subtitle: "Floor Plan",
   });
+
+  const [featuresUnlocked, setFeaturesUnlocked] = useState(false);
+
+  const handleOpenPlan = (_size?: string) => {
+    setModalMeta({
+      title: "Request Details",
+      subtitle: _size ? `${_size} Cent Villa Plan` : "Floor Plan",
+    });
+    setModalOpen(true);
+  };
 
   const handleOpenBrochure = () => {
     setModalMeta({
-      title: "Request Project Brochure",
+      title: "Request Details",
       subtitle: "Download Brochure",
     });
     setModalOpen(true);
@@ -32,10 +42,22 @@ export default function Home() {
 
   const handleOpenPaymentSchedule = () => {
     setModalMeta({
-      title: "Request Payment Schedule",
+      title: "Request Details",
       subtitle: "Payment Breakdown",
     });
     setModalOpen(true);
+  };
+
+  const handleRequestUnlockFeatures = () => {
+    setModalMeta({
+      title: "Request Details",
+      subtitle: "Amenities & Features",
+    });
+    setModalOpen(true);
+  };
+
+  const handleModalSuccess = () => {
+    setFeaturesUnlocked(true);
   };
 
   return (
@@ -47,8 +69,11 @@ export default function Home() {
         onOpenPaymentSchedule={handleOpenPaymentSchedule}
       />
       <Highlights />
-      <Residences />
-      <Amenities />
+      <Residences onOpenPlan={handleOpenPlan} />
+      <Amenities
+        isUnlocked={featuresUnlocked}
+        onRequestUnlock={handleRequestUnlockFeatures}
+      />
       <Location />
       <Gallery />
       <Testimonials />
@@ -60,6 +85,7 @@ export default function Home() {
         onClose={() => setModalOpen(false)}
         title={modalMeta.title}
         subtitle={modalMeta.subtitle}
+        onSuccess={handleModalSuccess}
       />
       <StickyContactBar />
     </main>

@@ -86,8 +86,31 @@ const allAmenities = [
   },
 ];
 
-export default function Amenities() {
+interface AmenitiesProps {
+  isUnlocked?: boolean;
+  onRequestUnlock?: () => void;
+}
+
+export default function Amenities({ isUnlocked = false, onRequestUnlock }: AmenitiesProps = {}) {
   const [showAll, setShowAll] = useState(false);
+
+  React.useEffect(() => {
+    if (isUnlocked) {
+      setShowAll(true);
+    }
+  }, [isUnlocked]);
+
+  const handleToggle = () => {
+    if (!isUnlocked) {
+      if (onRequestUnlock) {
+        onRequestUnlock();
+      } else {
+        setShowAll(true);
+      }
+      return;
+    }
+    setShowAll(!showAll);
+  };
 
   return (
     <section id="amenities" className="py-24 bg-white">
@@ -125,8 +148,9 @@ export default function Amenities() {
         {/* Action Button matching Screenshot 1 */}
         <div className="text-center mb-8">
           <button
-            onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-sm"
+            type="button"
+            onClick={handleToggle}
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-wine hover:bg-wine-light text-white font-sans text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-pointer"
           >
             <Eye className="w-4 h-4" />
             {showAll ? "Hide Features" : "View All Features"}
@@ -136,7 +160,10 @@ export default function Amenities() {
 
         {/* Expandable Full Photo Amenities Grid */}
         {showAll && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 border-t border-cream/60 transition-all duration-500 animate-fadeIn">
+          <div
+            id="all-amenities-grid"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 border-t border-cream/60 transition-all duration-500 animate-fadeIn"
+          >
             {allAmenities.map((item) => (
               <div key={item.title} className="group relative overflow-hidden bg-ivory shadow-sm border border-cream/50">
                 <SiteImage
