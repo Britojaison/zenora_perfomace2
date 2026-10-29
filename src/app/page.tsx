@@ -24,7 +24,7 @@ export default function Home() {
       <Navbar />
       <Hero onOpenBrochure={() => setModalOpen(true)} />
       <Overview />
-      <MapSection />
+      <Highlights />
       <Residences />
       <QuoteBanner
         image="7-cent-side.jpg"
@@ -32,7 +32,6 @@ export default function Home() {
         quote="A home that reflects who you have become, and what you are building next."
       />
       <Amenities />
-      <Highlights />
       <QuoteBanner
         image="private-theatre.jpg"
         alt="Zenora luxury villa lifestyle and community amenities in Coimbatore"
@@ -41,6 +40,7 @@ export default function Home() {
       />
       <Gallery />
       <Location />
+      <MapSection />
       <Contact />
       <Footer />
 

@@ -23,21 +23,19 @@ export default function Highlights() {
       <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
-            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-4">Key Highlights</p>
+            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-4">Zenora Living</p>
             <h2
               className="font-display italic font-light text-forest"
               style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)" }}
             >
-              Everything you need.
-              <br />
-              Nothing you don&apos;t.
+              Project <span className="font-serif not-italic text-forest">Highlights</span>
             </h2>
           </div>
           <a
             href="#contact"
             className="self-start md:self-auto bg-forest text-ivory font-sans text-[10px] uppercase tracking-[0.25em] px-8 py-4 hover:bg-gold hover:text-noir transition-colors duration-500"
           >
-            Enquire
+            Schedule A Site Visit
           </a>
         </div>
 
