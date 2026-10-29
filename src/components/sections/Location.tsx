@@ -164,11 +164,13 @@ export default function Location() {
           </div>
 
           <a
-            href="#map-section"
+            href="https://maps.google.com/?q=Goldwins+Coimbatore"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.2em] text-forest hover:text-wine transition-colors pt-3 border-t border-cream/40"
           >
             <Navigation className="w-3 h-3" />
-            View On Interactive Map
+            View On Google Maps
           </a>
         </div>
       </div>
