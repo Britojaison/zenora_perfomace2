@@ -114,27 +114,27 @@ export default function Hero(props: HeroProps) {
             </div>
           </div>
 
-          {/* Right: Floating White Enquiry Form Card */}
+          {/* Right: Floating Luxury Warm Ivory Enquiry Form Card */}
           <div className="flex justify-center shrink-0 w-full sm:w-auto">
             <div
               ref={formCardRef}
-              className="w-full max-w-[420px] sm:w-[420px] bg-white rounded-md shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] p-8 sm:p-10 border border-gray-100 relative z-10"
+              className="w-full max-w-[420px] sm:w-[420px] bg-[#faf7f2] rounded-md shadow-[0_25px_60px_-15px_rgba(0,0,0,0.45)] p-8 sm:p-10 border border-[#e5dccf] relative z-10"
             >
-              <h2 className="font-serif italic font-light text-3xl sm:text-[36px] text-gray-800 text-center mb-8">
+              <h2 className="font-serif italic font-normal text-3xl sm:text-[36px] text-[#1c261e] text-center mb-8">
                 Enquiry Now
               </h2>
 
               {submitted ? (
                 <div className="py-12 text-center">
-                  <p className="font-serif italic text-2xl text-forest mb-2">Thank you.</p>
-                  <p className="font-sans text-earth text-xs leading-relaxed">
+                  <p className="font-serif italic text-2xl text-[#a57d2a] mb-2">Thank you.</p>
+                  <p className="font-sans text-[#594433] text-xs leading-relaxed">
                     Our luxury villa consultant will get in touch with you shortly.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="text-[10px] uppercase tracking-[0.15em] text-gray-500 font-sans font-medium block mb-2">
+                    <label className="text-[10px] uppercase tracking-[0.18em] text-[#594433] font-sans font-medium block mb-2">
                       Full Name *
                     </label>
                     <input
@@ -143,18 +143,18 @@ export default function Hero(props: HeroProps) {
                       placeholder="Your Name"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-forest font-sans rounded-none transition-colors"
+                      className="w-full bg-white border border-[#ded5c8] px-4 py-3.5 text-sm text-[#1c261e] placeholder:text-[#a89f91] focus:outline-none focus:border-[#e1b258] font-sans rounded-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="text-[10px] uppercase tracking-[0.15em] text-gray-500 font-sans font-medium block mb-2">
+                    <label className="text-[10px] uppercase tracking-[0.18em] text-[#594433] font-sans font-medium block mb-2">
                       Phone Number *
                     </label>
-                    <div className="flex bg-[#f8f9fa] border border-[#e5e7eb]">
-                      <span className="px-3 py-3.5 border-r border-[#e5e7eb] text-xs text-gray-600 font-sans flex items-center gap-1.5 shrink-0">
+                    <div className="flex bg-white border border-[#ded5c8] focus-within:border-[#e1b258] transition-colors">
+                      <span className="px-3 py-3.5 border-r border-[#ded5c8] text-xs text-[#594433] font-sans flex items-center gap-1.5 shrink-0 bg-[#f3ede6]">
                         <span>🇮🇳</span>
-                        <span className="text-[8px] text-gray-400">▼</span>
+                        <span className="text-[8px] text-[#594433]/70">▼</span>
                         <span>+91</span>
                       </span>
                       <input
@@ -163,13 +163,13 @@ export default function Hero(props: HeroProps) {
                         placeholder="XXXXXXXXXX"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full bg-transparent px-4 py-3.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none font-sans"
+                        className="w-full bg-transparent px-4 py-3.5 text-sm text-[#1c261e] placeholder:text-[#a89f91] focus:outline-none font-sans"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-[10px] uppercase tracking-[0.15em] text-gray-500 font-sans font-medium block mb-2">
+                    <label className="text-[10px] uppercase tracking-[0.18em] text-[#594433] font-sans font-medium block mb-2">
                       Email Address *
                     </label>
                     <input
@@ -178,18 +178,18 @@ export default function Hero(props: HeroProps) {
                       placeholder="email@example.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-[#f8f9fa] border border-[#e5e7eb] px-4 py-3.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-forest font-sans rounded-none transition-colors"
+                      className="w-full bg-white border border-[#ded5c8] px-4 py-3.5 text-sm text-[#1c261e] placeholder:text-[#a89f91] focus:outline-none focus:border-[#e1b258] font-sans rounded-none transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.25em] font-semibold transition-all duration-300 shadow-md cursor-pointer"
+                    className="w-full py-4 bg-[#e1b258] hover:bg-[#cfa145] text-[#140f06] font-sans text-xs uppercase tracking-[0.25em] font-bold transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.99] cursor-pointer"
                   >
                     Submit
                   </button>
 
-                  <p className="text-[9px] text-center text-gray-400 font-sans leading-relaxed pt-2">
+                  <p className="text-[9.5px] text-center text-[#7c6a5d] font-sans leading-relaxed pt-2">
                     Your information is secure. We will only contact you regarding your inquiry.
                   </p>
                 </form>
