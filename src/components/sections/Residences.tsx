@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 import SiteImage from "@/components/ui/SiteImage";
 
 const villas = [
   {
     badge: "Intimate",
     size: "5.5",
+    builtUp: "2,850 – 3,250 Sq.ft.",
     image: "master-bedroom-view-1.jpg",
     alt: "5.5 Cent luxury villa at Zenora, Goldwins, Coimbatore",
     desc: "A refined sanctuary designed for those who value privacy and precision. Every corner considered, every material chosen with intent.",
@@ -15,6 +16,7 @@ const villas = [
   {
     badge: "Signature",
     size: "7",
+    builtUp: "3,750 – 4,150 Sq.ft.",
     image: "7-cent-side.jpg",
     alt: "7 Cent luxury villa at Zenora, Goldwins, Coimbatore",
     desc: "The balance of grandeur and warmth. Generous spaces that breathe, with rooftop access to the Sky Garden and Aqua Lounge.",
@@ -22,6 +24,7 @@ const villas = [
   {
     badge: "Estate",
     size: "11",
+    builtUp: "5,200 – 5,850 Sq.ft.",
     image: "bedroom01.jpg",
     alt: "11 Cent estate villa at Zenora, Goldwins, Coimbatore",
     desc: "The pinnacle of Zenora living. Expansive, commanding, and designed for those who have arrived — and know it.",
@@ -38,43 +41,49 @@ export default function Residences() {
   };
 
   return (
-    <section id="residences" className="py-24 bg-cream/40">
+    <section id="residences" className="py-24 bg-[#faf5f0]/50">
       <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
-        {/* Pricing Table (Matches Image 4) */}
-        <div className="mb-20">
-          <div className="text-center md:text-left mb-10">
-            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-3">Pricing & Configurations</p>
-            <h2
-              className="font-display italic font-light text-forest"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-            >
-              Pricing <span className="font-serif not-italic text-forest">Table</span>
+        {/* Pricing Table (Matches Reference Layout) */}
+        <div className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] text-gray-900 leading-none">
+              Pricing <span className="font-display italic text-wine">Table</span>
             </h2>
           </div>
 
-          <div className="bg-white shadow-sm overflow-hidden">
-            <div className="grid grid-cols-3 bg-forest text-ivory font-sans text-[10px] uppercase tracking-[0.25em] text-center">
-              <div className="py-4">Unit Type</div>
-              <div className="py-4">Plot Size</div>
-              <div className="py-4">Unit Plan</div>
+          <div className="max-w-4xl mx-auto bg-white shadow-sm border border-gray-200 overflow-hidden">
+            {/* Table Header: High-contrast Wine Red with White Text */}
+            <div className="grid grid-cols-3 bg-wine text-white font-sans text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-center divide-x divide-white/20">
+              <div className="py-4 sm:py-5 px-3">Unit Type</div>
+              <div className="py-4 sm:py-5 px-3">Built Up Area</div>
+              <div className="py-4 sm:py-5 px-3">Unit Plan</div>
             </div>
-            {villas.map((villa) => (
-              <div
-                key={villa.size}
-                className="grid grid-cols-3 items-center text-center border-b border-cream font-sans text-sm text-forest"
-              >
-                <div className="py-5 font-serif italic text-base">{villa.badge} ({villa.size} Cent)</div>
-                <div className="py-5 text-earth">{villa.size} Cent Plot</div>
-                <div className="py-3">
-                  <a
-                    href="#contact"
-                    className="inline-block bg-forest text-ivory text-[9px] uppercase tracking-[0.25em] px-5 py-2.5 hover:bg-gold hover:text-noir transition-colors"
-                  >
-                    Download Unit Plan
-                  </a>
+
+            {/* Table Rows: Clear borders & readable typography */}
+            <div className="divide-y divide-gray-200">
+              {villas.map((villa) => (
+                <div
+                  key={villa.size}
+                  className="grid grid-cols-3 items-center text-center divide-x divide-gray-200 bg-white hover:bg-cream/20 transition-colors"
+                >
+                  <div className="py-5 sm:py-6 px-3 font-serif text-gray-900 font-semibold text-sm sm:text-base">
+                    {villa.badge} ({villa.size} Cent)
+                  </div>
+                  <div className="py-5 sm:py-6 px-3 font-sans text-gray-700 font-medium text-xs sm:text-sm">
+                    {villa.builtUp}
+                  </div>
+                  <div className="py-4 px-3 flex items-center justify-center">
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-1.5 bg-wine hover:bg-[#200508] text-white text-[10px] sm:text-xs uppercase tracking-wider px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-300 shadow-xs hover:shadow-sm font-medium"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Download Unit Plan</span>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 

@@ -18,18 +18,15 @@
 }
 
 .verticalTextContainer {
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 1rem;
-  width: 90px;
+  position: relative;
+  width: 60px;
   height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
   z-index: 10;
+  flex-shrink: 0;
 }
 
 @media (max-width: 639px) {
@@ -38,28 +35,33 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .verticalTextContainer {
+    width: 75px;
+    height: 380px;
+  }
+}
+
 .verticalTextInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg) !important;
+  transform-origin: center center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: rotate(-90deg) !important;
-  transform-origin: center center;
   letter-spacing: 0.28em;
   font-family: var(--font-editorial), var(--font-display), Georgia, serif;
   color: #33090d;
   text-transform: uppercase;
   white-space: nowrap;
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.15;
 }
 
 @media (min-width: 1024px) {
-  .verticalTextContainer {
-    margin-right: 1.5rem;
-    width: 100px;
-    height: 380px;
-  }
   .verticalTextInner {
-    font-size: 2.5rem;
+    font-size: 2.35rem;
   }
 }

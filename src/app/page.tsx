@@ -17,12 +17,35 @@ import StickyContactBar from "@/components/ui/StickyContactBar";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalMeta, setModalMeta] = useState({
+    title: "Begin your Zenora journey.",
+    subtitle: "Get in Touch",
+  });
+
+  const handleOpenBrochure = () => {
+    setModalMeta({
+      title: "Request Project Brochure",
+      subtitle: "Download Brochure",
+    });
+    setModalOpen(true);
+  };
+
+  const handleOpenPaymentSchedule = () => {
+    setModalMeta({
+      title: "Request Payment Schedule",
+      subtitle: "Payment Breakdown",
+    });
+    setModalOpen(true);
+  };
 
   return (
     <main className="relative min-h-screen bg-ivory text-charcoal">
       <Navbar />
-      <Hero onOpenBrochure={() => setModalOpen(true)} />
-      <Overview />
+      <Hero onOpenBrochure={handleOpenBrochure} />
+      <Overview
+        onOpenBrochure={handleOpenBrochure}
+        onOpenPaymentSchedule={handleOpenPaymentSchedule}
+      />
       <Highlights />
       <Residences />
       <Amenities />
@@ -32,7 +55,12 @@ export default function Home() {
       <Contact />
       <Footer />
 
-      <EnquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <EnquiryModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title={modalMeta.title}
+        subtitle={modalMeta.subtitle}
+      />
       <StickyContactBar />
     </main>
   );

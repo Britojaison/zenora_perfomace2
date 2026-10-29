@@ -1,63 +1,69 @@
 "use client";
 
 import React from "react";
-
-const stats = [
-  { number: "60", label: "Exclusive Units" },
-  { number: "3", label: "Villa Configurations" },
-  { number: "4+", label: "Rooftop Experiences" },
-  { number: "10", label: "Minutes From Airport" },
-];
+import { Building2, Home, Sparkles, Plane, Calendar } from "lucide-react";
 
 const highlights = [
-  "Aspirational homes for the next chapter",
-  "Rooftop lifestyle : Sky Garden, Aqua Lounge, Star Deck",
-  "Goldwins convenience, minus the noise",
-  "Modern design with practical comfort",
-  "Clubhouse, Wellness Arena, EV charging, CCTV",
+  {
+    icon: Building2,
+    title: "60 Exclusive Ultra-Luxury Villas",
+  },
+  {
+    icon: Home,
+    title: "Exclusive Clubhouse & Wellness Arena",
+  },
+  {
+    icon: Sparkles,
+    title: "4+ Curated Rooftop Lifestyle Experiences",
+  },
+  {
+    icon: Plane,
+    title: "10 Minutes from Coimbatore Airport",
+  },
 ];
 
 export default function Highlights() {
   return (
-    <section id="highlights" className="py-24 bg-cream/40">
+    <section id="highlights" className="py-24 bg-[#faf5f0]">
       <div className="px-6 md:px-20 max-w-screen-xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
           <div>
-            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-4">Zenora Living</p>
-            <h2
-              className="font-display italic font-light text-forest"
-              style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)" }}
-            >
-              Project <span className="font-serif not-italic text-forest">Highlights</span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] text-forest leading-none">
+              Project <span className="font-display italic text-wine">Highlights</span>
             </h2>
           </div>
+
           <a
             href="#contact"
-            className="self-start md:self-auto bg-forest text-ivory font-sans text-[10px] uppercase tracking-[0.25em] px-8 py-4 hover:bg-gold hover:text-noir transition-colors duration-500"
+            className="inline-flex items-center gap-2.5 bg-wine hover:bg-[#200508] text-white font-sans text-xs uppercase tracking-[0.2em] px-7 py-3.5 font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] self-start sm:self-auto cursor-pointer"
           >
-            Schedule A Site Visit
+            <Calendar className="w-4 h-4" />
+            <span>Schedule A Site Visit</span>
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-5">
-          {stats.map((stat) => (
-            <div key={stat.label} className="bg-white text-center py-10 px-4 shadow-sm">
-              <p className="font-sans text-gold font-light leading-none mb-3" style={{ fontSize: "clamp(2.2rem, 4vw, 3.2rem)" }}>
-                {stat.number}
-              </p>
-              <p className="font-sans text-earth text-[10px] uppercase tracking-[0.25em]">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-5">
-          {highlights.map((item) => (
-            <div key={item} className="bg-white py-10 px-6 text-center shadow-sm flex items-center justify-center min-h-[140px]">
-              <p className="font-sans text-forest text-sm leading-relaxed">{item}</p>
-            </div>
-          ))}
+        {/* 4 Clean Square Cards in 1 Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {highlights.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white p-8 sm:p-10 shadow-sm border border-gray-100/70 flex flex-col items-center justify-center text-center aspect-square transition-all duration-300 hover:shadow-md hover:-translate-y-1 group"
+              >
+                <div className="w-12 h-12 flex items-center justify-center mb-6 text-wine group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-9 h-9 stroke-[1.4]" />
+                </div>
+                <p className="font-sans text-forest text-sm sm:text-[15px] font-medium leading-relaxed max-w-[210px]">
+                  {item.title}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
+

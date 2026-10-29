@@ -41,11 +41,11 @@ export default function Hero({ onOpenBrochure }: HeroProps) {
       {/* Main Container - Centered horizontally across viewport */}
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10 w-full flex items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 xl:gap-24 w-full">
-          {/* Left: Framed Visual Showcase (Centered with vertical text attached) */}
+          {/* Left: Framed Visual Showcase with Vertical Title */}
           <div ref={visualRef} className="relative flex items-center justify-center shrink-0">
-            {/* Tall Framed Image Container */}
-            <div className="hero-image-box relative w-[310px] sm:w-[370px] md:w-[410px] lg:w-[430px] h-[480px] sm:h-[550px] md:h-[600px] lg:h-[630px]">
-              {/* Vertical Title attached directly to the left edge */}
+            {/* Assembly grouping vertical title + tall photo in flow */}
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8">
+              {/* Vertical Title (In layout flow so hero composition is mathematically centered) */}
               <div className={`hero-vertical-anim ${styles.verticalTextContainer}`}>
                 <div className={styles.verticalTextInner}>
                   <span>Luxury</span>
@@ -53,39 +53,47 @@ export default function Hero({ onOpenBrochure }: HeroProps) {
                 </div>
               </div>
 
-              {/* Offset Accent Outline Box (Extending top & right) */}
-              <div className="absolute -top-5 -right-5 w-full h-full border-2 border-wine pointer-events-none z-0" />
+              {/* Tall Framed Image Container */}
+              <div className="hero-image-box relative w-[300px] sm:w-[350px] md:w-[390px] lg:w-[420px] h-[480px] sm:h-[530px] md:h-[580px] lg:h-[620px]">
+                {/* Offset Accent Outline Box (Extending top & right) */}
+                <div className="absolute -top-5 -right-5 w-full h-full border-2 border-wine pointer-events-none z-0" />
 
-              {/* Main Photo */}
-              <div className="relative w-full h-full rounded-none overflow-hidden shadow-2xl z-10 border border-white">
-                <Image
-                  src="/images/street-view.jpg"
-                  alt="Zenora luxury villa community in Goldwins, Coimbatore"
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Overlapping Bottom Badge / Pill (Proportional & No text overflow) */}
-              <div className="hero-badge absolute -bottom-7 left-1/2 -translate-x-1/2 w-[94%] sm:w-[90%] bg-white rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.12)] px-5 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between border border-gray-100 z-20">
-                <div className="pr-3 shrink-0">
-                  <p className="font-serif text-base sm:text-lg lg:text-xl text-forest font-bold leading-tight whitespace-nowrap">
-                    5.5, 7 & 11 Cent
-                  </p>
-                  <p className="font-sans text-[10px] sm:text-[11px] tracking-[0.2em] text-earth uppercase mt-1 font-medium whitespace-nowrap">
-                    Goldwins, Coimbatore
-                  </p>
+                {/* Main Photo */}
+                <div className="relative w-full h-full rounded-none overflow-hidden shadow-2xl z-10 border border-white">
+                  <Image
+                    src="/images/street-view.jpg"
+                    alt="Zenora luxury villa community in Goldwins, Coimbatore"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
                 </div>
-                <div className="w-px h-9 bg-gray-200 shrink-0 mx-2 sm:mx-3" />
-                <div className="pl-3 text-right shrink-0">
-                  <p className="font-serif text-xl sm:text-2xl lg:text-[28px] text-wine font-bold leading-none whitespace-nowrap">
-                    60 Villas*
-                  </p>
-                  <p className="font-serif italic text-xs text-earth mt-1 whitespace-nowrap">
-                    Onwards
-                  </p>
+
+                {/* Overlapping Bottom Badge / Pill (Centered 2-Column Grid, No overflow) */}
+                <div className="hero-badge absolute -bottom-7 sm:-bottom-8 left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-[420px] bg-white rounded-2xl sm:rounded-3xl shadow-[0_15px_35px_rgba(0,0,0,0.12)] py-3 sm:py-3.5 px-3 sm:px-5 grid grid-cols-[1fr_auto_1fr] items-center border border-gray-100 z-20 overflow-hidden">
+                  {/* Left Column: Specs / Location */}
+                  <div className="flex flex-col items-center justify-center text-center px-1 sm:px-2">
+                    <p className="font-serif text-sm sm:text-base md:text-lg text-forest font-bold leading-tight whitespace-nowrap">
+                      5.5, 7 & 11 Cent
+                    </p>
+                    <p className="font-sans text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.16em] text-earth uppercase mt-1 font-medium whitespace-nowrap">
+                      Goldwins, Coimbatore
+                    </p>
+                  </div>
+
+                  {/* Center Divider */}
+                  <div className="w-px h-8 sm:h-9 bg-wine/25 shrink-0 mx-1 sm:mx-2" />
+
+                  {/* Right Column: Units / Pricing */}
+                  <div className="flex flex-col items-center justify-center text-center px-1 sm:px-2">
+                    <p className="font-serif text-base sm:text-xl md:text-2xl text-wine font-bold leading-tight whitespace-nowrap">
+                      60 Villas*
+                    </p>
+                    <p className="font-serif italic text-[11px] sm:text-xs text-earth mt-0.5 whitespace-nowrap">
+                      Onwards
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

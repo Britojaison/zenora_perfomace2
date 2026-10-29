@@ -7,9 +7,16 @@ import styles from "./EnquiryModal.module.css";
 interface EnquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
+  title?: string;
+  subtitle?: string;
 }
 
-export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
+export default function EnquiryModal({
+  isOpen,
+  onClose,
+  title = "Begin your Zenora journey.",
+  subtitle = "Get in Touch",
+}: EnquiryModalProps) {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
@@ -36,9 +43,9 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
             <X className="w-5 h-5" />
           </button>
 
-          <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-3">Get in Touch</p>
+          <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mb-3">{subtitle}</p>
           <h3 className="font-display italic font-light text-3xl text-cream mb-8">
-            Begin your Zenora journey.
+            {title}
           </h3>
 
           {submitted ? (
