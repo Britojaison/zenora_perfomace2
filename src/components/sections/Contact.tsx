@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Calendar, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -10,6 +11,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
+  const router = useRouter();
   const sectionRef = useRef<HTMLElement>(null);
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -38,6 +40,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    router.push("/thank-you");
   };
 
   return (

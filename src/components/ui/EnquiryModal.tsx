@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { X } from "lucide-react";
 import styles from "./EnquiryModal.module.css";
 
@@ -16,8 +17,10 @@ export default function EnquiryModal({
   isOpen,
   onClose,
   title = "Request Details",
+  subtitle,
   onSuccess,
 }: EnquiryModalProps) {
+  const router = useRouter();
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
   const timerRef = React.useRef<NodeJS.Timeout | null>(null);
@@ -54,9 +57,11 @@ export default function EnquiryModal({
     if (onSuccess) {
       onSuccess();
     }
+    const isBrochure = subtitle?.toLowerCase().includes("brochure");
     timerRef.current = setTimeout(() => {
       onClose();
-    }, 1500);
+      router.push(isBrochure ? "/thank-you?download=brochure" : "/thank-you");
+    }, 500);
   };
 
   const handleManualClose = () => {

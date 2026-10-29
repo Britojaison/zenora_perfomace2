@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRouter } from "next/navigation";
 import styles from "./Hero.module.css";
 
 interface HeroProps {
@@ -12,6 +13,7 @@ interface HeroProps {
 
 export default function Hero(props: HeroProps) {
   void props;
+  const router = useRouter();
   const containerRef = useRef<HTMLElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
   const formCardRef = useRef<HTMLDivElement>(null);
@@ -33,6 +35,7 @@ export default function Hero(props: HeroProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    router.push("/thank-you");
   };
 
   return (
