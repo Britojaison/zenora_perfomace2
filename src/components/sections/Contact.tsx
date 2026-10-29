@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Calendar, Phone, Mail, MapPin } from "lucide-react";
+import { Calendar, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
@@ -136,6 +136,14 @@ export default function Contact() {
             </span>
             <a href="tel:+918870044213" className="flex items-center gap-2 hover:text-wine transition-colors">
               <Phone className="w-3.5 h-3.5 text-wine" /> +91 88700 44213
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=919789003828&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-[#25D366] transition-colors"
+            >
+              <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" /> WhatsApp Chat
             </a>
             <a href="mailto:info@zenvistas.co.in" className="flex items-center gap-2 hover:text-wine transition-colors">
               <Mail className="w-3.5 h-3.5 text-wine" /> info@zenvistas.co.in

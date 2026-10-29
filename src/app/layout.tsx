@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { blacker, bwDiagrid, editorial } from "./fonts";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: "Zenora Villas · Luxury Villas in Coimbatore | Crafted for the Chosen",
@@ -21,7 +22,10 @@ export default function RootLayout({
       <body
         className={`${blacker.variable} ${bwDiagrid.variable} ${editorial.variable} bg-ivory text-charcoal font-sans antialiased`}
       >
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          {children}
+          <FloatingWhatsApp />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
