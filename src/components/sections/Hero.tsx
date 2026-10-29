@@ -10,7 +10,8 @@ interface HeroProps {
   onOpenBrochure?: () => void;
 }
 
-export default function Hero({ onOpenBrochure }: HeroProps) {
+export default function Hero(props: HeroProps) {
+  void props;
   const containerRef = useRef<HTMLElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
   const formCardRef = useRef<HTMLDivElement>(null);

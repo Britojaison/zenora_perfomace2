@@ -133,7 +133,7 @@ export default function Residences() {
                 <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/45 to-transparent" />
                 <a
                   href="#contact"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-forest text-ivory font-sans text-[10px] uppercase tracking-[0.25em] px-6 py-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-md"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-forest hover:bg-forest-light text-ivory font-sans text-[10px] uppercase tracking-[0.25em] px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:scale-105 z-10"
                 >
                   View Plan
                 </a>
