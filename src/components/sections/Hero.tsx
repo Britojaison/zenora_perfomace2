@@ -76,8 +76,8 @@ export default function Hero(props: HeroProps) {
                 {/* Main Photo */}
                 <div className="relative w-full h-full rounded-none overflow-hidden shadow-2xl z-10 border border-white">
                   <Image
-                    src="/images/street-view.jpg"
-                    alt="Zenora luxury villa community in Goldwins, Coimbatore"
+                    src="/images/7-cent-side.jpg"
+                    alt="Zenora luxury villa architecture in Goldwins, Coimbatore"
                     fill
                     priority
                     sizes="(max-width: 768px) 100vw, 50vw"
