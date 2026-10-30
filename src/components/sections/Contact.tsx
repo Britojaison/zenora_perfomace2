@@ -49,7 +49,7 @@ export default function Contact() {
         {/* Left: Overlapping Photos matching Screenshot 5 */}
         <div className="lg:col-span-6 relative h-[320px] sm:h-[460px] w-full max-w-[500px] mx-auto">
           {/* Back/Top Image */}
-          <div className="contact-img-back absolute top-0 left-0 w-[68%] h-[68%] rounded-sm overflow-hidden shadow-md">
+          <div className="contact-img-back absolute top-0 left-0 w-[68%] h-[68%] rounded-sm overflow-hidden shadow-md z-10 border border-white">
             <Image
               src="/images/aerial-view-club-hosue.jpg"
               alt="Zenora luxury villa community Goldwins"
@@ -59,11 +59,11 @@ export default function Contact() {
             />
           </div>
 
-          {/* Accent Frame Box */}
-          <div className="contact-frame-box absolute top-[8%] left-[28%] w-[66%] h-[68%] border border-forest/40 pointer-events-none" />
+          {/* Accent Frame Box (Tightly framing the front image) */}
+          <div className="contact-frame-box absolute bottom-2 -right-2 sm:bottom-3 sm:-right-3 w-[70%] h-[68%] border-2 border-[#e1b258]/60 pointer-events-none z-0 rounded-sm" />
 
           {/* Front/Bottom Image */}
-          <div className="contact-img-front absolute bottom-0 right-0 w-[70%] h-[68%] rounded-sm overflow-hidden shadow-2xl">
+          <div className="contact-img-front absolute bottom-0 right-0 w-[70%] h-[68%] rounded-sm overflow-hidden shadow-2xl z-20 border-2 border-white">
             <Image
               src="/images/street-view.jpg"
               alt="Zenora architectural street view"
