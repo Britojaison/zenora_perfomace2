@@ -12,10 +12,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface OverviewProps {
   onOpenBrochure?: () => void;
-  onOpenPaymentSchedule?: () => void;
 }
 
-export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: OverviewProps) {
+export default function Overview({ onOpenBrochure }: OverviewProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(

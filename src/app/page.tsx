@@ -40,14 +40,6 @@ export default function Home() {
     setModalOpen(true);
   };
 
-  const handleOpenPaymentSchedule = () => {
-    setModalMeta({
-      title: "Request Details",
-      subtitle: "Payment Breakdown",
-    });
-    setModalOpen(true);
-  };
-
   const handleRequestUnlockFeatures = () => {
     setModalMeta({
       title: "Request Details",
@@ -72,10 +64,7 @@ export default function Home() {
     <main className="relative min-h-screen bg-ivory text-charcoal">
       <Navbar />
       <Hero onOpenBrochure={handleOpenBrochure} />
-      <Overview
-        onOpenBrochure={handleOpenBrochure}
-        onOpenPaymentSchedule={handleOpenPaymentSchedule}
-      />
+      <Overview onOpenBrochure={handleOpenBrochure} />
       <Highlights onScheduleVisit={handleScheduleVisit} />
       <Residences onOpenPlan={handleOpenPlan} />
       <Amenities
