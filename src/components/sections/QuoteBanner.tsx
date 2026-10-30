@@ -30,7 +30,7 @@ export default function QuoteBanner({ image, quote, attribution, alt }: QuoteBan
             {quote}
           </p>
           {attribution && (
-            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mt-6">— {attribution}</p>
+            <p className="font-sans text-gold text-xs uppercase tracking-[0.25em] mt-6">{attribution}</p>
           )}
         </div>
       </div>

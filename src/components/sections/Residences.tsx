@@ -13,21 +13,21 @@ const villas = [
   {
     badge: "Intimate",
     size: "5.5",
-    builtUp: "3,789 – 4,476 Sq.ft.",
+    builtUp: "3,789 - 4,476 Sq.ft.",
     image: "master-bedroom-view-1.jpg",
     alt: "5.5 Cent luxury villa at Zenora, Goldwins, Coimbatore",
   },
   {
     badge: "Signature",
     size: "7",
-    builtUp: "4,476 – 5,030 Sq.ft.",
+    builtUp: "4,476 - 5,030 Sq.ft.",
     image: "7-cent-side.jpg",
     alt: "7 Cent luxury villa at Zenora, Goldwins, Coimbatore",
   },
   {
     badge: "Estate",
     size: "11",
-    builtUp: "5,904 – 7,777 Sq.ft.",
+    builtUp: "5,904 - 7,777 Sq.ft.",
     image: "bedroom01.jpg",
     alt: "11 Cent estate villa at Zenora, Goldwins, Coimbatore",
   },
@@ -115,9 +115,9 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
             {/* Table Body: Alternating Rows */}
             <div className="divide-y divide-gray-100 font-sans text-xs sm:text-sm text-center">
               {[
-                { type: "4 BHK", land: "5.5 Cents", builtUp: "3,789 – 4,476 Sq.ft." },
-                { type: "4 BHK", land: "7 Cents", builtUp: "4,476 – 5,030 Sq.ft." },
-                { type: "5 BHK", land: "11 Cents", builtUp: "5,904 – 7,777 Sq.ft." },
+                { type: "4 BHK", land: "5.5 Cents", builtUp: "3,789 - 4,476 Sq.ft." },
+                { type: "4 BHK", land: "7 Cents", builtUp: "4,476 - 5,030 Sq.ft." },
+                { type: "5 BHK", land: "11 Cents", builtUp: "5,904 - 7,777 Sq.ft." },
               ].map((row, idx) => (
                 <div
                   key={row.land}
@@ -148,7 +148,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
                 Floor <span className="font-serif not-italic text-forest">Plan</span>
               </h2>
               <p className="font-sans text-earth text-sm md:text-base max-w-xl mt-3 leading-relaxed">
-                Explore thoughtfully designed villa layouts that blend space, privacy, and architectural precision — crafted for elevated living.
+                Explore thoughtfully designed villa layouts that blend space, privacy, and architectural precision, crafted for elevated living.
               </p>
             </div>
             <div className="flex gap-3 shrink-0 self-end md:self-auto md:hidden">

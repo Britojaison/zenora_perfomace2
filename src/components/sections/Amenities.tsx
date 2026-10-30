@@ -149,7 +149,7 @@ export default function Amenities({ isUnlocked = false, onRequestUnlock }: Ameni
         </div>
 
         {/* Action Button matching Screenshot 1 */}
-        <div className="text-center mb-8">
+        <div className={`text-center ${showAll ? "mb-8 sm:mb-10" : ""}`}>
           <button
             type="button"
             onClick={handleToggle}

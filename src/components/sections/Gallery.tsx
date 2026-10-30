@@ -83,7 +83,7 @@ export default function Gallery() {
           </div>
           <div className="flex items-center gap-2 font-display text-lg text-forest/70">
             <span className="text-2xl font-serif text-forest">{selectedIndex + 1}</span>
-            <span className="text-forest font-sans text-xs">—</span>
+            <span className="text-forest/50 font-sans text-xs">/</span>
             <span className="text-sm font-sans text-earth/50">{galleryImages.length}</span>
           </div>
         </div>

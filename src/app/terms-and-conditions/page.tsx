@@ -37,7 +37,7 @@ export default function TermsAndConditions() {
               </h2>
               <p className="pl-7 text-charcoal/85">
                 Access to and use of the website zenoravillas.in constitutes your acceptance of these Terms &amp;
-                Conditions. If you do not agree, you should not use this website. These terms apply to all users —
+                Conditions. If you do not agree, you should not use this website. These terms apply to all users,
                 including visitors, enquirers, and anyone registering for ZenVistas events.
               </p>
             </div>
@@ -130,8 +130,8 @@ export default function TermsAndConditions() {
                 Intellectual Property
               </h2>
               <p className="pl-7 text-charcoal/85">
-                All content on this website — including text, images, architectural renders, videos, floor plans,
-                logos, and the Zenora and ZenVistas brand names — is the property of ZenVistas Realty and is protected
+                All content on this website, including text, images, architectural renders, videos, floor plans,
+                logos, and the Zenora and ZenVistas brand names, is the property of ZenVistas Realty and is protected
                 by applicable Indian copyright law. Reproduction, distribution, or commercial use of any website content
                 without prior written permission is prohibited.
               </p>
@@ -211,7 +211,7 @@ export default function TermsAndConditions() {
                 </p>
                 <p>
                   <strong className="text-forest">Address:</strong> ZenVistas Realty, Goldwins, Coimbatore, Tamil Nadu
-                  — 641014
+                  - 641014
                 </p>
               </div>
             </div>

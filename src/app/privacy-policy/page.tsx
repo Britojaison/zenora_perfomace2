@@ -236,7 +236,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <p>
                   <strong className="text-forest">Address:</strong> ZenVistas Realty, Goldwins, Coimbatore, Tamil Nadu
-                  — 641014
+                  - 641014
                 </p>
               </div>
             </div>
