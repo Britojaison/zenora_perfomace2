@@ -190,7 +190,7 @@ export default function Hero(props: HeroProps) {
                   </button>
 
                   <p className="text-[9.5px] text-center text-[#7c6a5d] font-sans leading-relaxed pt-2">
-                    Your information is secure. We will only contact you regarding your inquiry.
+                    Your information is secure. We will only contact you regarding your enquiry.
                   </p>
                 </form>
               )}

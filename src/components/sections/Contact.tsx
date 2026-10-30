@@ -153,7 +153,7 @@ export default function Contact() {
                 </button>
 
                 <p className="text-[10px] text-center text-taupe font-sans leading-relaxed pt-2">
-                  Your information is secure. We will only contact you regarding your inquiry.
+                  Your information is secure. We will only contact you regarding your enquiry.
                 </p>
               </form>
             )}

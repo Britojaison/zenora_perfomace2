@@ -158,7 +158,7 @@ export default function EnquiryModal({
               </button>
 
               <p className="text-[9.5px] text-center text-gray-400 font-sans leading-relaxed pt-1">
-                Your information is secure. We will only contact you regarding your inquiry.
+                Your information is secure. We will only contact you regarding your enquiry.
               </p>
             </form>
           )}
