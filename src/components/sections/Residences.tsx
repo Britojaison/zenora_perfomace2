@@ -16,7 +16,6 @@ const villas = [
     builtUp: "2,850 – 3,250 Sq.ft.",
     image: "master-bedroom-view-1.jpg",
     alt: "5.5 Cent luxury villa at Zenora, Goldwins, Coimbatore",
-    desc: "A refined sanctuary designed for those who value privacy and precision. Every corner considered, every material chosen with intent.",
   },
   {
     badge: "Signature",
@@ -24,7 +23,6 @@ const villas = [
     builtUp: "3,750 – 4,150 Sq.ft.",
     image: "7-cent-side.jpg",
     alt: "7 Cent luxury villa at Zenora, Goldwins, Coimbatore",
-    desc: "The balance of grandeur and warmth. Generous spaces that breathe, with rooftop access to the Sky Garden and Aqua Lounge.",
   },
   {
     badge: "Estate",
@@ -32,7 +30,6 @@ const villas = [
     builtUp: "5,200 – 5,850 Sq.ft.",
     image: "bedroom01.jpg",
     alt: "11 Cent estate villa at Zenora, Goldwins, Coimbatore",
-    desc: "The pinnacle of Zenora living. Expansive, commanding, and designed for those who have arrived — and know it.",
   },
 ];
 
@@ -200,11 +197,10 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
                   <span className="font-sans text-gold text-[10px] uppercase tracking-[0.25em] block mb-1.5">
                     {villa.badge}
                   </span>
-                  <h3 className="font-serif italic text-2xl lg:text-3xl text-white mb-2.5 flex items-baseline gap-1.5 leading-none">
+                  <h3 className="font-serif italic text-2xl lg:text-3xl text-white mb-0 flex items-baseline gap-1.5 leading-none">
                     <span>{villa.size}</span>
                     <span>Cent Villa</span>
                   </h3>
-                  <p className="font-sans text-cream/90 text-xs sm:text-sm leading-relaxed">{villa.desc}</p>
                 </div>
               </div>
             ))}
