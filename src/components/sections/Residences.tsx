@@ -145,7 +145,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
                 className="font-display italic font-light text-forest"
                 style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
               >
-                Floor <span className="font-serif not-italic text-forest">Plan</span>
+                Floor <span className="font-serif not-italic text-forest">Plans</span>
               </h2>
               <p className="font-sans text-earth text-sm md:text-base max-w-xl mt-3 leading-relaxed">
                 Explore thoughtfully designed villa layouts that blend space, privacy, and architectural precision, crafted for elevated living.

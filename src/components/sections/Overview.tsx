@@ -86,12 +86,12 @@ export default function Overview({ onOpenBrochure }: OverviewProps) {
 
           <p className="overview-text-reveal font-sans text-earth text-[15px] sm:text-base leading-[1.8] sm:leading-[1.9] mb-4">
             Zenora is for those who want more from life: more comfort, more intention, and more elegance in everyday
-            living. Designed as an ultra luxury community in the quiet corner of Goldwins, Zenora combines premium
+            living. Designed as an ultra-luxury community in the quiet corner of Goldwins, Zenora combines premium
             architecture with curated lifestyle spaces.
           </p>
 
           <p className="overview-text-reveal font-sans text-earth text-[15px] sm:text-base leading-[1.8] sm:leading-[1.9] mb-8">
-            The Horizon Garden, Serenity Pool, and Business Lounge, offering an elevated living experience with all the
+            The Horizon Garden, Serenity Pool, and Business Lounge offer an elevated living experience with all the
             modern comforts.
           </p>
 
