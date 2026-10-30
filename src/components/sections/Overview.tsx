@@ -55,8 +55,8 @@ export default function Overview({ onOpenBrochure }: OverviewProps) {
             />
           </div>
 
-          {/* Wine Offset Accent Box */}
-          <div className="overview-accent-box absolute top-[8%] left-[26%] w-[68%] h-[64%] border-2 border-forest pointer-events-none z-0" />
+          {/* Gold Offset Accent Outline Box (Matching Hero Style) */}
+          <div className="overview-accent-box absolute bottom-3 -right-3 sm:bottom-5 sm:-right-5 w-[72%] h-[66%] border-2 border-[#e1b258]/60 pointer-events-none z-0" />
 
           {/* Bottom-Right Foreground Day Image */}
           <div className="overview-img-front absolute bottom-0 right-0 w-[72%] h-[66%] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] z-20 border-2 border-white">

@@ -100,7 +100,7 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
         <div className="pricing-table-anim mb-12 sm:mb-16 lg:mb-20">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] text-gray-900 leading-none">
-              Pricing <span className="font-display italic text-forest">Table</span>
+              Villa <span className="font-display italic text-forest">Details</span>
             </h2>
           </div>
 
