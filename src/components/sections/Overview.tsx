@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import { Check, Download, FileText } from "lucide-react";
+import { Check, Download } from "lucide-react";
 import SiteImage from "@/components/ui/SiteImage";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -153,7 +153,7 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
             </div>
           </div>
 
-          {/* CTA Buttons: Download Brochure & Download Payment Schedule */}
+          {/* CTA Button: Download Brochure */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <button
               type="button"
@@ -162,15 +162,6 @@ export default function Overview({ onOpenBrochure, onOpenPaymentSchedule }: Over
             >
               <Download className="w-4 h-4" />
               <span>Download Brochure</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={onOpenPaymentSchedule}
-              className="overview-btn inline-flex items-center justify-center gap-2.5 bg-[#5b6065] hover:bg-[#484c50] text-white font-sans text-xs uppercase tracking-[0.15em] sm:tracking-[0.18em] px-6 sm:px-7 py-4 min-h-[48px] font-medium transition-[background-color,box-shadow] duration-300 shadow-sm hover:shadow-md cursor-pointer"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Download Payment Schedule</span>
             </button>
           </div>
         </div>

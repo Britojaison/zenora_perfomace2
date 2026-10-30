@@ -56,6 +56,14 @@ export default function Home() {
     setModalOpen(true);
   };
 
+  const handleScheduleVisit = () => {
+    setModalMeta({
+      title: "Schedule A Site Visit",
+      subtitle: "Site Visit Request",
+    });
+    setModalOpen(true);
+  };
+
   const handleModalSuccess = () => {
     setFeaturesUnlocked(true);
   };
@@ -68,7 +76,7 @@ export default function Home() {
         onOpenBrochure={handleOpenBrochure}
         onOpenPaymentSchedule={handleOpenPaymentSchedule}
       />
-      <Highlights />
+      <Highlights onScheduleVisit={handleScheduleVisit} />
       <Residences onOpenPlan={handleOpenPlan} />
       <Amenities
         isUnlocked={featuresUnlocked}

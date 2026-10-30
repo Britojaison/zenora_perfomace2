@@ -22,7 +22,11 @@ const highlights = [
   },
 ];
 
-export default function Highlights() {
+interface HighlightsProps {
+  onScheduleVisit?: () => void;
+}
+
+export default function Highlights({ onScheduleVisit }: HighlightsProps = {}) {
   return (
     <section id="highlights" className="py-14 sm:py-20 lg:py-24 bg-[#faf5f0]">
       <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-screen-xl mx-auto">
@@ -34,13 +38,14 @@ export default function Highlights() {
             </h2>
           </div>
 
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={onScheduleVisit}
             className="inline-flex items-center gap-2.5 bg-forest hover:bg-forest-light text-white font-sans text-xs uppercase tracking-[0.2em] px-7 py-3.5 font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] self-start sm:self-auto cursor-pointer"
           >
             <Calendar className="w-4 h-4" />
             <span>Schedule A Site Visit</span>
-          </a>
+          </button>
         </div>
 
         {/* 4 Clean Square Cards in 1 Row */}
