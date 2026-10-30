@@ -23,7 +23,7 @@ const galleryImages = [
   { src: "/images/cricket.jpg", alt: "Cricket Turf" },
   { src: "/images/multi-sport-court.jpg", alt: "Multi Sport Arena" },
   { src: "/images/walking-paths.jpg", alt: "Landscaped Walking Paths" },
-  { src: "/images/View-48.jpg", alt: "Panoramic Community View" },
+  { src: "/images/clubhouse.jpg", alt: "Clubhouse Architectural Elevation" },
 ];
 
 export default function Gallery() {
