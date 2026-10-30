@@ -103,7 +103,7 @@ export default function Hero(props: HeroProps) {
                   {/* Right Column: Units / Pricing */}
                   <div className="flex flex-col items-center justify-center text-center px-1 sm:px-2">
                     <p className="font-serif text-base sm:text-xl md:text-2xl text-forest font-bold leading-tight whitespace-nowrap">
-                      60 Villas*
+                      6.2 Cr*
                     </p>
                     <p className="font-serif italic text-[11px] sm:text-xs text-earth mt-0.5 whitespace-nowrap">
                       Onwards
