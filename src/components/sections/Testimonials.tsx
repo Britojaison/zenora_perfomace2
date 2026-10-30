@@ -23,9 +23,18 @@ const testimonials = [
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+
+  React.useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
 
   const active = testimonials[current];
 
@@ -72,8 +81,17 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial Card */}
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white p-6 sm:p-8 md:p-12 shadow-sm border border-cream/50 relative text-center">
+        <div
+          className="max-w-2xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
+          <div
+            key={current}
+            className="bg-white p-6 sm:p-8 md:p-12 shadow-sm border border-cream/50 relative text-center min-h-[260px] sm:min-h-[240px] flex flex-col justify-center animate-in fade-in duration-500"
+          >
             <h3 className="font-serif text-xl md:text-2xl text-forest mb-3">{active.name}</h3>
             <div className="flex justify-center gap-1 text-forest mb-6">
               {[...Array(active.rating)].map((_, i) => (
