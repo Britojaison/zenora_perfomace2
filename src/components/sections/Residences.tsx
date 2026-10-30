@@ -94,10 +94,10 @@ export default function Residences({ onOpenPlan }: ResidencesProps = {}) {
   );
 
   return (
-    <section id="residences" ref={sectionRef} className="py-14 sm:py-20 lg:py-24 bg-[#faf5f0]/50">
+    <section id="residences" ref={sectionRef} className="pt-6 sm:pt-8 lg:pt-10 pb-14 sm:pb-20 lg:pb-24 bg-[#faf5f0]/50">
       <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-screen-xl mx-auto">
         {/* Pricing Table (Matches Reference Layout) */}
-        <div className="pricing-table-anim mb-14 sm:mb-20 lg:mb-24">
+        <div className="pricing-table-anim mb-12 sm:mb-16 lg:mb-20">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] text-gray-900 leading-none">
               Pricing <span className="font-display italic text-forest">Table</span>

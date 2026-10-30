@@ -28,7 +28,7 @@ interface HighlightsProps {
 
 export default function Highlights({ onScheduleVisit }: HighlightsProps = {}) {
   return (
-    <section id="highlights" className="py-14 sm:py-20 lg:py-24 bg-[#faf5f0]">
+    <section id="highlights" className="pt-14 sm:pt-20 lg:pt-24 pb-6 sm:pb-8 lg:pb-10 bg-[#faf5f0]">
       <div className="px-5 sm:px-8 md:px-12 lg:px-20 max-w-screen-xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 mb-8 sm:mb-12">
