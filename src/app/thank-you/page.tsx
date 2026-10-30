@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <main className="min-h-screen w-full bg-[#faf5f0] flex flex-col lg:flex-row relative overflow-hidden">
+    <main className="min-h-screen w-full bg-[#faf5f0] flex flex-col lg:flex-row relative">
       {/* Left Column: Confirmation & Actions */}
-      <div className="w-full lg:w-1/2 min-h-screen flex flex-col justify-between px-6 sm:px-12 lg:px-16 xl:px-20 py-8 sm:py-12 z-10 relative bg-[#faf5f0]">
+      <div className="w-full lg:w-1/2 lg:min-h-screen flex flex-col justify-between px-5 sm:px-12 lg:px-16 xl:px-20 pt-7 pb-8 sm:py-12 z-10 relative bg-[#faf5f0]">
         {/* Top Header: Brand Logo */}
-        <header className="shrink-0 mb-8 sm:mb-12">
+        <header className="shrink-0 mb-6 sm:mb-10 lg:mb-12">
           <Link href="/" className="inline-block transition-opacity hover:opacity-90">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -28,16 +28,16 @@ export default function ThankYouPage() {
         </header>
 
         {/* Center: Message & Call-To-Action */}
-        <div className="my-auto py-6 sm:py-10 max-w-lg">
-          <p className="font-sans text-forest font-semibold text-xs uppercase tracking-[0.25em] mb-4">
+        <div className="py-2 sm:py-6 lg:my-auto max-w-lg">
+          <p className="font-sans text-forest font-semibold text-[11px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.25em] mb-3 sm:mb-4">
             Enquiry Received
           </p>
 
-          <h1 className="font-display text-3xl sm:text-4xl lg:text-[46px] text-forest leading-[1.15] mb-5">
+          <h1 className="font-display text-[27px] sm:text-4xl lg:text-[46px] text-forest leading-[1.18] sm:leading-[1.15] mb-4 sm:mb-5">
             Your Journey <span className="font-display italic text-forest">Begins Here.</span>
           </h1>
 
-          <p className="font-sans text-forest/75 text-sm sm:text-base leading-relaxed mb-9 font-normal">
+          <p className="font-sans text-forest/75 text-sm sm:text-base leading-relaxed mb-6 sm:mb-9 font-normal">
             Thank you for expressing interest in Zenora. Our concierge team has been notified and
             will connect with you shortly to assist with floor plans, pricing, and private site visits.
           </p>
@@ -45,14 +45,26 @@ export default function ThankYouPage() {
           <Suspense fallback={null}>
             <ThankYouClient />
           </Suspense>
+
+          {/* Architectural visual card visible on mobile */}
+          <div className="lg:hidden mt-8 relative w-full aspect-[16/10] sm:aspect-[2/1] rounded-sm overflow-hidden shadow-sm border border-forest/10">
+            <Image
+              src="/images/clubhouse.jpg"
+              alt="Zenora Luxury Clubhouse and Residences"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-center"
+            />
+          </div>
         </div>
 
         {/* Bottom Footer */}
-        <footer className="shrink-0 pt-8 mt-8 border-t border-forest/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="font-sans text-[10px] sm:text-[11px] tracking-[0.2em] text-forest/50 uppercase font-light">
+        <footer className="shrink-0 pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-forest/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 pb-20 sm:pb-8 lg:pb-0">
+          <p className="font-sans text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.2em] text-forest/50 uppercase font-light">
             © 2026 ZENVISTAS. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex items-center gap-6 sm:gap-8 font-sans text-[10px] sm:text-[11px] tracking-[0.2em] text-forest/70 uppercase">
+          <div className="flex items-center gap-6 sm:gap-8 font-sans text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.2em] text-forest/70 uppercase">
             <Link
               href="/privacy-policy"
               className="hover:text-forest transition-colors duration-200"
@@ -69,14 +81,14 @@ export default function ThankYouPage() {
         </footer>
       </div>
 
-      {/* Right Column: Architectural Visual */}
-      <div className="w-full lg:w-1/2 relative min-h-[420px] sm:min-h-[520px] lg:min-h-screen order-last">
+      {/* Right Column: Architectural Visual (Desktop) */}
+      <div className="hidden lg:block lg:w-1/2 relative lg:min-h-screen">
         <Image
           src="/images/clubhouse.jpg"
           alt="Zenora Luxury Clubhouse and Residences"
           fill
           priority
-          sizes="(max-width: 1024px) 100vw, 50vw"
+          sizes="50vw"
           className="object-cover object-center"
         />
       </div>
