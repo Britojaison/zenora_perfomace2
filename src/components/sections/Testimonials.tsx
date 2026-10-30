@@ -5,19 +5,24 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Manikandan Sridhar",
+    name: "Kishore Chandran",
     rating: 5,
-    text: "My experience with the Zenora team has been exceptional. The sales staff were patient, explained everything clearly, and were transparent about villa specifications and the development roadmap. Responsive to calls and made the whole journey effortless. Truly appreciate their dedication to quality.",
+    text: "Visited the Zenora project recently and was impressed with the concept. A thoughtfully planned 7-acre low-density villa community with just 59 villas and nearly 50% green space. The focus on calm living, landscaped gardens and community …",
   },
   {
-    name: "Dr. Karthik & Sneha Iyer",
+    name: "Kaarthik n",
     rating: 5,
-    text: "Choosing a villa at Zenora in Goldwins was the best decision for our family. The balance between quiet, peaceful living and airport convenience is unmatched in Coimbatore. The rooftop amenities and architecture are genuinely world-class.",
+    text: "I have visited their office recently and came to know about their upcoming ultra luxury legacy villa project. Amazed with the project details. Awaiting for the pre launch and launch. Excellent project for Business Tycoons in and around Southern Tamil Nadu.",
   },
   {
-    name: "Arun Balaji",
+    name: "aksarath thangam",
     rating: 5,
-    text: "Zenora stands apart from other projects with its thoughtful design, privacy, and curated community feel. The craftsmanship and transparency from the very first site visit to final booking gave us absolute confidence.",
+    text: "We've booked a dream villa in Coimbatore with Zenvistas! The area is super peaceful and chill. Plus, it's really accessible to all the key spots in the city. Grateful for all your support - whole team",
+  },
+  {
+    name: "Nishaa",
+    rating: 5,
+    text: "I'm truly impressed with this. The villas they provide are not just homes but a perfect combination of luxury and comfort. It feels like a dream house come true. The location is prime, making it a smart investment for the future. Every …",
   },
 ];
 
