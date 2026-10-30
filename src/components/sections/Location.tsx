@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Bus, GraduationCap, HeartPulse, Navigation } from "lucide-react";
+import { Bus, GraduationCap, HeartPulse } from "lucide-react";
 
 type CategoryKey = "schools" | "hospitals" | "connectivity";
 
@@ -142,7 +142,7 @@ export default function Location() {
         </button>
 
         {/* Card 4: Details Panel (Matches Image 2 Right Column) */}
-        <div className="col-span-3 lg:col-span-1 bg-white p-6 sm:p-7 rounded-sm shadow-sm border border-cream/50 flex flex-col justify-between gap-5 lg:h-[420px]">
+        <div className="col-span-3 lg:col-span-1 bg-white p-6 sm:p-7 rounded-sm shadow-sm border border-cream/50 flex flex-col lg:h-[420px]">
           <div>
             <div className="flex items-center gap-3 text-forest mb-2">
               <IconComponent className="w-6 h-6 stroke-[1.5]" />
@@ -162,16 +162,6 @@ export default function Location() {
               ))}
             </div>
           </div>
-
-          <a
-            href="https://maps.google.com/?q=Goldwins+Coimbatore"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.2em] text-forest hover:text-forest-light transition-colors pt-3 min-h-[44px] border-t border-cream/40"
-          >
-            <Navigation className="w-3 h-3" />
-            View On Google Maps
-          </a>
         </div>
       </div>
     </section>
