@@ -6,10 +6,35 @@
   align-items: center;
   justify-content: center;
   padding-top: 5.5rem;
-  padding-bottom: 5.5rem;
+  padding-bottom: 6rem;
   overflow: hidden;
   background-color: #0e0c0b;
 }
+
+@media (max-width: 639px) {
+  .heroSection {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .heroSection {
+    min-height: auto;
+    padding-top: 5.25rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroSection {
+    padding-top: 5.5rem;
+    padding-bottom: 6rem;
+  }
+}
+
+
 
 .heroBgWrapper {
   position: absolute;
