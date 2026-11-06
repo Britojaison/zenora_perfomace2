@@ -51,7 +51,7 @@ export default function Contact() {
           {/* Back/Top Image */}
           <div className="contact-img-back absolute top-0 left-0 w-[68%] h-[68%] rounded-sm overflow-hidden shadow-md z-10 border border-white">
             <Image
-              src="/images/aerial-view-club-hosue.jpg"
+              src="/images/aerial-view-club-hosue.webp"
               alt="Zenora luxury villa community Goldwins"
               fill
               sizes="(max-width: 768px) 60vw, 30vw"
@@ -65,7 +65,7 @@ export default function Contact() {
           {/* Front/Bottom Image */}
           <div className="contact-img-front absolute bottom-0 right-0 w-[70%] h-[68%] rounded-sm overflow-hidden shadow-2xl z-20 border-2 border-white">
             <Image
-              src="/images/street-view.jpg"
+              src="/images/street-view.webp"
               alt="Zenora architectural street view"
               fill
               sizes="(max-width: 768px) 70vw, 35vw"

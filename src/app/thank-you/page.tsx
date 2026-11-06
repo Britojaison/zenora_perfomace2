@@ -49,7 +49,7 @@ export default function ThankYouPage() {
           {/* Architectural visual card visible on mobile */}
           <div className="lg:hidden mt-8 relative w-full aspect-[16/10] sm:aspect-[2/1] rounded-sm overflow-hidden shadow-sm border border-forest/10">
             <Image
-              src="/images/clubhouse.jpg"
+              src="/images/clubhouse.webp"
               alt="Zenora Luxury Clubhouse and Residences"
               fill
               priority
@@ -84,7 +84,7 @@ export default function ThankYouPage() {
       {/* Right Column: Architectural Visual (Desktop) */}
       <div className="hidden lg:block lg:w-1/2 relative lg:min-h-screen">
         <Image
-          src="/images/clubhouse.jpg"
+          src="/images/clubhouse.webp"
           alt="Zenora Luxury Clubhouse and Residences"
           fill
           priority

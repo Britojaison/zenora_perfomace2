@@ -3,32 +3,32 @@ import localFont from "next/font/local";
 export const blacker = localFont({
   src: [
     {
-      path: "../../public/fonts/blacker/Blacker-Display-Light-trial.ttf",
+      path: "../../public/fonts/blacker/Blacker-Display-Light-trial.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/fonts/blacker/Blacker-Display-Light-Italic-trial.ttf",
+      path: "../../public/fonts/blacker/Blacker-Display-Light-Italic-trial.woff2",
       weight: "300",
       style: "italic",
     },
     {
-      path: "../../public/fonts/blacker/Blacker-Display-Regular-trial.ttf",
+      path: "../../public/fonts/blacker/Blacker-Display-Regular-trial.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/blacker/Blacker-Display-Regular-Italic-trial.ttf",
+      path: "../../public/fonts/blacker/Blacker-Display-Regular-Italic-trial.woff2",
       weight: "400",
       style: "italic",
     },
     {
-      path: "../../public/fonts/blacker/Blacker-Display-Medium-trial.ttf",
+      path: "../../public/fonts/blacker/Blacker-Display-Medium-trial.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/blacker/Blacker-Display-Bold-trial.ttf",
+      path: "../../public/fonts/blacker/Blacker-Display-Bold-trial.woff2",
       weight: "700",
       style: "normal",
     },

@@ -48,7 +48,7 @@ export default function Overview({ onOpenBrochure }: OverviewProps) {
           {/* Top-Left Night/Evening Image */}
           <div className="overview-img-back absolute top-0 left-0 w-[68%] h-[64%] overflow-hidden shadow-lg z-10 border border-white">
             <SiteImage
-              src="View-48.jpg"
+              src="View-48.webp"
               alt="Zenora architectural evening elevation"
               aspectRatio="h-full"
               sizes="(max-width: 768px) 60vw, 30vw"
@@ -61,7 +61,7 @@ export default function Overview({ onOpenBrochure }: OverviewProps) {
           {/* Bottom-Right Foreground Day Image */}
           <div className="overview-img-front absolute bottom-0 right-0 w-[72%] h-[66%] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] z-20 border-2 border-white">
             <SiteImage
-              src="7-cent-side.jpg"
+              src="7-cent-side.webp"
               alt="Zenora luxury villa exterior"
               aspectRatio="h-full"
               sizes="(max-width: 768px) 70vw, 35vw"

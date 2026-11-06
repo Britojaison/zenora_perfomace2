@@ -18,7 +18,7 @@ const categories: Record<CategoryKey, CategoryData> = {
   connectivity: {
     title: "Nearby Connectivity",
     categoryLabel: "TRANSPORT",
-    image: "/images/street-view.jpg",
+    image: "/images/street-view.webp",
     icon: Bus,
     items: [
       { name: "Coimbatore International Airport", distance: "5.2 km" },
@@ -32,7 +32,7 @@ const categories: Record<CategoryKey, CategoryData> = {
   schools: {
     title: "Reputed Institutions",
     categoryLabel: "EDUCATION",
-    image: "/images/childrens-play-garden.jpg",
+    image: "/images/childrens-play-garden.webp",
     icon: GraduationCap,
     items: [
       { name: "The Camford International School", distance: "3.5 km" },
@@ -45,7 +45,7 @@ const categories: Record<CategoryKey, CategoryData> = {
   hospitals: {
     title: "Healthcare Centers",
     categoryLabel: "HEALTHCARE",
-    image: "/images/meditation-centre.jpg",
+    image: "/images/meditation-centre.webp",
     icon: HeartPulse,
     items: [
       { name: "KMCH (Kovai Medical Center & Hospital)", distance: "4.2 km" },

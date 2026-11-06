@@ -26,62 +26,62 @@ const keyAmenities = [
 const allAmenities = [
   {
     title: "Meditation Centre",
-    image: "meditation-centre.jpg",
+    image: "meditation-centre.webp",
     desc: "A quiet sanctuary within Zenora. Designed for reflection, stillness, and moments away from the rhythm of the day.",
   },
   {
     title: "Business Lounge",
-    image: "business-lounge.jpg",
+    image: "business-lounge.webp",
     desc: "A sophisticated space for residents balancing work and leisure. Quiet, private, and equipped for professional needs.",
   },
   {
     title: "Gala Room",
-    image: "gala-room.jpg",
+    image: "gala-room.webp",
     desc: "A grand setting for special occasions and events. Perfectly designed for celebrations, gatherings, and memorable moments.",
   },
   {
     title: "Clubhouse",
-    image: "clubhouse.jpg",
+    image: "clubhouse.webp",
     desc: "A shared address within Zenora. A place where conversations, quiet gatherings, and community moments naturally unfold.",
   },
   {
     title: "Swimming Pool",
-    image: "swimming-pool.jpg",
+    image: "swimming-pool.webp",
     desc: "A calm water retreat within the landscape. Meant for slow laps, quiet afternoons, and a refreshing pause.",
   },
   {
     title: "Multi Sport Court",
-    image: "multi-sport-court.jpg",
+    image: "multi-sport-court.webp",
     desc: "A versatile court where recreation finds its place. From quick games to longer evenings of sport.",
   },
   {
     title: "Children's Play Garden",
-    image: "childrens-play-garden.jpg",
+    image: "childrens-play-garden.webp",
     desc: "A lively corner of the community. Designed for exploration, imagination, and carefree play.",
   },
   {
     title: "Community Lounge",
-    image: "Community Lounge.jpg",
+    image: "Community Lounge.webp",
     desc: "An informal setting for conversation and connection. A place where neighbours meet beyond the everyday.",
   },
   {
     title: "Cricket Turf",
-    image: "cricket.jpg",
+    image: "cricket.webp",
     desc: "For the familiar rhythm of the game. Evenings often gather here around friendly matches and spirited play.",
   },
   {
     title: "Private Theatre",
-    image: "private-theatre.jpg",
+    image: "private-theatre.webp",
     desc: "Cinema-grade entertainment in the comfort of your community. Because evenings should be extraordinary.",
   },
   {
     title: "Walking Paths",
-    image: "walking-paths.jpg",
+    image: "walking-paths.webp",
     desc: "Pathways that move gently through Zenora. Designed for morning walks, evening conversations, and unhurried movement.",
   },
   {
     title: "Garden Cafe",
-    image: "garden-cafe.jpg",
+    image: "garden-cafe.webp",
     desc: "A serene cafe nestled within lush gardens, offering a perfect spot to enjoy freshly brewed coffee or light bites amidst nature's tranquility.",
   },
 ];

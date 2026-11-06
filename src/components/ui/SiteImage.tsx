@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 interface SiteImageProps {
-  src: string; // filename inside /public/images, e.g. "clubhouse.jpg"
+  src: string; // filename inside /public/images, e.g. "clubhouse.webp"
   alt: string;
   aspectRatio?: string; // tailwind aspect class, e.g. "aspect-[16/10]"
   className?: string;

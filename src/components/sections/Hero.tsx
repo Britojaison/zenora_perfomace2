@@ -43,7 +43,7 @@ export default function Hero(props: HeroProps) {
       {/* Background Architectural Image with Luxury Overlay */}
       <div className={styles.heroBgWrapper}>
         <Image
-          src="/images/Community Lounge.jpg"
+          src="/images/Community Lounge.webp"
           alt="Zenora luxury community lounge in Goldwins, Coimbatore"
           fill
           priority
@@ -76,7 +76,7 @@ export default function Hero(props: HeroProps) {
                 {/* Main Photo */}
                 <div className="relative w-full h-full rounded-none overflow-hidden shadow-2xl z-10 border border-white">
                   <Image
-                    src="/images/7-cent-side.jpg"
+                    src="/images/7-cent-side.webp"
                     alt="Zenora luxury villa architecture in Goldwins, Coimbatore"
                     fill
                     priority
